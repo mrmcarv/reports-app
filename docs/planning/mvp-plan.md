@@ -90,10 +90,10 @@
 
 ### Airtable Integration (Read-only for Dashboard)
 
-- [ ] **TASK-022:** Create Airtable API client (lib/airtable.ts - read only)
-- [ ] **TASK-023:** Implement read work orders function (filter by technician, step, status)
-- [ ] **TASK-024:** Implement sort by PLANNED_DATE
-- [ ] **TASK-025:** Test Airtable read with real data
+- [x] **TASK-022:** Create Airtable API client (lib/airtable.ts - read only)
+- [x] **TASK-023:** Implement read work orders function (filter by technician, step, status)
+- [x] **TASK-024:** Implement sort by PLANNED_DATE
+- [x] **TASK-025:** Test Airtable read with real data
 
 ### n8n Integration (Write via Webhook)
 
