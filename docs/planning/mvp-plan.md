@@ -82,11 +82,11 @@
 
 ### Configuration System
 
-- [ ] **TASK-017:** Create form configuration file (lib/formConfig.ts)
-- [ ] **TASK-018:** Define battery_swap form config
-- [ ] **TASK-019:** Define maintenance form config with reporting categories
-- [ ] **TASK-020:** Define wind_audit form config
-- [ ] **TASK-021:** Define survey form config (for extensibility)
+- [x] **TASK-017:** Create form configuration file (lib/formConfig.ts)
+- [x] **TASK-018:** Define battery_swap form config
+- [x] **TASK-019:** Define maintenance form config with reporting categories
+- [x] **TASK-020:** Define wind_audit form config
+- [x] **TASK-021:** Define survey form config (for extensibility)
 
 ### Airtable Integration (Read-only for Dashboard)
 
