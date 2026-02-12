@@ -77,8 +77,8 @@
 - [x] **TASK-012:** Define battery_swaps table (with batteryPosition)
 - [x] **TASK-013:** Define parts_used table (with formSubmissionId)
 - [x] **TASK-014:** Create Drizzle config for Supabase PostgreSQL
-- [ ] **TASK-015:** Run migrations to create tables in Supabase
-- [ ] **TASK-016:** Test database CRUD operations
+- [x] **TASK-015:** Run migrations to create tables in Supabase
+- [x] **TASK-016:** Test database CRUD operations
 
 ### Configuration System
 
