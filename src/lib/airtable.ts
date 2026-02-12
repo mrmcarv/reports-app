@@ -52,6 +52,7 @@ export async function fetchWorkOrdersForTechnician(
   try {
     const records = await debloqBase('Work Orders')
       .select({
+        view: 'Grid view',
         filterByFormula: `AND(
           {Step} = "3-Scheduled ",
           {Status} = "On Track",
@@ -92,6 +93,7 @@ export async function fetchWorkOrderById(
   try {
     const records = await debloqBase('Work Orders')
       .select({
+        view: 'Grid view',
         filterByFormula: `{WO_ID} = "${workOrderId}"`,
         maxRecords: 1,
       })
