@@ -71,11 +71,11 @@
 
 ### Database Schema & Migrations
 
-- [ ] **TASK-009:** Create database schema file (lib/schema.ts) with PostgreSQL types
-- [ ] **TASK-010:** Define work_orders table (pgTable, serial, timestamp, jsonb)
-- [ ] **TASK-011:** Define form_submissions table
-- [ ] **TASK-012:** Define battery_swaps table (with batteryPosition)
-- [ ] **TASK-013:** Define parts_used table (with formSubmissionId)
+- [x] **TASK-009:** Create database schema file (lib/schema.ts) with PostgreSQL types
+- [x] **TASK-010:** Define work_orders table (pgTable, serial, timestamp, jsonb)
+- [x] **TASK-011:** Define form_submissions table
+- [x] **TASK-012:** Define battery_swaps table (with batteryPosition)
+- [x] **TASK-013:** Define parts_used table (with formSubmissionId)
 - [ ] **TASK-014:** Create Drizzle config for Supabase PostgreSQL
 - [ ] **TASK-015:** Run migrations to create tables in Supabase
 - [ ] **TASK-016:** Test database CRUD operations
