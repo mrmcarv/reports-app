@@ -53,26 +53,26 @@ export async function fetchWorkOrdersForTechnician(
     const records = await debloqBase('Work Orders')
       .select({
         filterByFormula: `AND(
-          {step} = "SCHEDULED",
-          {status} = "ON_TRACK",
-          {technician_email} = "${technicianEmail}"
+          {Step} = "3-Scheduled ",
+          {Status} = "On Track",
+          {Technician_drona} = "${technicianEmail}"
         )`,
-        sort: [{ field: 'PLANNED_DATE', direction: 'asc' }],
+        sort: [{ field: 'Planned Date', direction: 'asc' }],
       })
       .all();
 
     return records.map((record) => ({
       id: record.id,
-      workOrderId: record.get('work_order_id') as string,
-      workType: record.get('WO_TYPE') as AirtableWorkOrder['workType'],
-      client: record.get('CLIENT') as string | undefined,
-      pointCode: record.get('POINT_CODE') as string | undefined,
-      lockerVersion: record.get('LOCKER_VERSION') as string | undefined,
-      initialIssue: record.get('INITIAL_ISSUE') as string | undefined,
-      plannedDate: record.get('PLANNED_DATE') as string | undefined,
-      step: record.get('step') as string | undefined,
-      status: record.get('status') as string | undefined,
-      technicianEmail: record.get('technician_email') as string | undefined,
+      workOrderId: record.get('WO_ID') as string,
+      workType: record.get('Stage Type') as AirtableWorkOrder['workType'],
+      client: record.get('Client') as string | undefined,
+      pointCode: record.get('Bloqit ID') as string | undefined,
+      lockerVersion: record.get('Locker') as string | undefined,
+      initialIssue: record.get('Description Complete') as string | undefined,
+      plannedDate: record.get('Planned Date') as string | undefined,
+      step: record.get('Step') as string | undefined,
+      status: record.get('Status') as string | undefined,
+      technicianEmail: record.get('Technician_drona') as string | undefined,
     }));
   } catch (error) {
     console.error('Error fetching work orders from Airtable:', error);
@@ -92,7 +92,7 @@ export async function fetchWorkOrderById(
   try {
     const records = await debloqBase('Work Orders')
       .select({
-        filterByFormula: `{work_order_id} = "${workOrderId}"`,
+        filterByFormula: `{WO_ID} = "${workOrderId}"`,
         maxRecords: 1,
       })
       .all();
@@ -104,16 +104,16 @@ export async function fetchWorkOrderById(
     const record = records[0];
     return {
       id: record.id,
-      workOrderId: record.get('work_order_id') as string,
-      workType: record.get('WO_TYPE') as AirtableWorkOrder['workType'],
-      client: record.get('CLIENT') as string | undefined,
-      pointCode: record.get('POINT_CODE') as string | undefined,
-      lockerVersion: record.get('LOCKER_VERSION') as string | undefined,
-      initialIssue: record.get('INITIAL_ISSUE') as string | undefined,
-      plannedDate: record.get('PLANNED_DATE') as string | undefined,
-      step: record.get('step') as string | undefined,
-      status: record.get('status') as string | undefined,
-      technicianEmail: record.get('technician_email') as string | undefined,
+      workOrderId: record.get('WO_ID') as string,
+      workType: record.get('Stage Type') as AirtableWorkOrder['workType'],
+      client: record.get('Client') as string | undefined,
+      pointCode: record.get('Bloqit ID') as string | undefined,
+      lockerVersion: record.get('Locker') as string | undefined,
+      initialIssue: record.get('Description Complete') as string | undefined,
+      plannedDate: record.get('Planned Date') as string | undefined,
+      step: record.get('Step') as string | undefined,
+      status: record.get('Status') as string | undefined,
+      technicianEmail: record.get('Technician_drona') as string | undefined,
     };
   } catch (error) {
     console.error('Error fetching work order from Airtable:', error);

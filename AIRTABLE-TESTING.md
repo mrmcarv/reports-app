@@ -13,18 +13,18 @@ Before testing, make sure you have:
 The integration expects these field names in your "Work Orders" table:
 
 ### Required Fields:
-- `work_order_id` - Unique work order identifier
-- `WO_TYPE` - Work order type (battery_swap, maintenance, wind_audit, survey)
-- `step` - Current step (should be "SCHEDULED" for active work)
-- `status` - Status (should be "ON_TRACK" for active work)
-- `technician_email` - Email of assigned technician
+- `WO_ID` - Unique work order identifier
+- `Stage Type` - Work order type (battery_swap, maintenance, wind_audit, survey)
+- `Step` - Current step (should be "3-Scheduled " for active work - note the trailing space)
+- `Status` - Status (should be "On Track" for active work)
+- `Technician_drona` - Email of assigned technician
 
 ### Optional Fields:
-- `CLIENT` - Client name
-- `POINT_CODE` - Location/point code
-- `LOCKER_VERSION` - Locker version
-- `INITIAL_ISSUE` - Description of the issue
-- `PLANNED_DATE` - When the work is scheduled
+- `Client` - Client name
+- `Bloqit ID` - Location/point code
+- `Locker` - Locker version
+- `Description Complete` - Description of the issue
+- `Planned Date` - When the work is scheduled
 
 **Note:** Field names are case-sensitive!
 
@@ -117,9 +117,9 @@ Replace `technician@example.com` with an actual email from your Airtable.
 - Update field names in `src/lib/airtable.ts` if needed
 
 ### No work orders returned but they exist:
-- Check `step` field = "SCHEDULED" (case-sensitive)
-- Check `status` field = "ON_TRACK" (case-sensitive)
-- Check `technician_email` matches exactly
+- Check `Step` field = "3-Scheduled " (case-sensitive, note the trailing space)
+- Check `Status` field = "On Track" (case-sensitive)
+- Check `Technician_drona` matches exactly
 - Verify filters in Airtable dashboard
 
 ## Adjusting Field Names
@@ -127,8 +127,11 @@ Replace `technician@example.com` with an actual email from your Airtable.
 If your Airtable uses different field names, update them in `src/lib/airtable.ts`:
 
 ```typescript
-// Example: If your field is "WorkOrderID" instead of "work_order_id"
-workOrderId: record.get('WorkOrderID') as string,
+// Example: The current mapping uses Airtable field "WO_ID" for workOrderId
+workOrderId: record.get('WO_ID') as string,
+
+// If your field was different, you would change it like:
+workOrderId: record.get('YourFieldName') as string,
 ```
 
 ## Next Steps

@@ -1,0 +1,1233 @@
+﻿Stage ID,Parts / Asset movement,WO_ID,Spare Parts - Required,Chosen team / Technician,Step,Stage Type,Planned Date,Spareparts_used,Intervention Finished,Intervention Done Date,Highest Priority,Support_Needed,Reporting Categories,Intervention Started,Intervention Start Date,Status,Technician_drona,Title,Full Address,Locker,planned_startdate,BO link,LS Agent Name,Stage,LS Requested date,#FreshService Ticket,Project Type,FreshService URL,Drona URL,WO parts movement,Stage Template,Project Stage,WO parts movement 2,Synced to Maintenance2,OOC,LS Start date,LS End Date,Next Destination,Longitude,Latitude,DistanceKM,DurationMinutes,ETA to destination,Pre Intervention Notification,wo_id merged,Detailed Status,Bloqit ID,Shop Name,Maintenance report interface link,Client,Zip Code,City,Description Complete,Store Working hours,LP Phone number 1,Intervention started new,Country
+D7_OU_46_SUR_87393,,87393,,,3-Scheduled ,Survey,19/2/2026 10:00,,,,,,,,,On Track,,,dorpsstraat 75-77 4661 HN halsteren,,19/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/87393,,Location Survey,Survey,,,,,,,4.27082500,51.52382500,,,,,87393,On Track,,Plus Halsteren,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,4661,halsteren,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+Between 10-13. 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+31164-683271  +31644287101,,Netherlands
+D7_OU_30_SUR_85588,,85588,,,3-Scheduled ,Survey,23/2/2026 10:00,,,,,,,,,On Track,,,Nerijse Steenweg 6A 3061 Leefdaal,,23/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/85588,,Location Survey,Survey,,,,,,,4.59220050,50.84730320,,,,,85588,On Track,,Carrefour Express - Leefdaal ,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,3061,Leefdaal,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,"+3226884585, +32477138577  +3226884585",,Belgium
+W0_NA_11_WOR_88530,,88530,,Alejandro Sosa,6-Done,Work Order,16/2/2026 08:30,,,12/2/2026 18:30,High,checked,Other,,12/2/2026 12:27,On Track,alejandro.sosadk@gmail.com,"ES090061 - black screen-fsId=194455, ES090061 - black screen-fsId=194455","C. Algeciras, 58",Inpost16535,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/69176117dd488c43c4fb6eea,,Work order,,"194455, 194455",Work order,"https://bloqit.freshservice.com/a/tickets/194455, https://bloqit.freshservice.com/a/tickets/194455",https://bloqit.dronahq.io/livesupport/Comments/88530,,Work Order - Maintenance,Work order,,,,,,,-5.59959432,36.01987341,,,,,88530,Unsuccessful - Bloqit,69176117dd488c43c4fb6eea,LOCKER 24/7 - TARIFAOIL S.L.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/rec3zHtQdGDdPQ5vf?home=pagbRJ9eTa9qcKvoP,Inpost,11380,Tarifa,"Reporting Category: 
+Other, Other
+--------------
+Problem Description: 
+Locker unreachableLocker unreachable
+--------------
+Special Instructions: 
+Summary of The issue: 
+- Bloq is unreachable.
+
+Steps for FS:
+1 - Check that the batteries are charged and correctly inserted.
+2 - Check network signal on site.
+3 - Reboot locker.
+
+Required spares :
+Optional spares: 
+.   
+--------------
+
+Additional Instructions: .     
+ 
+
+--------------
+Client Description: 
+Description: Black screen
+
+FreshService Ticket ID: 194455Description: Black screen
+
+FreshService Ticket ID: 194455
+--------------",,,,Spain
+W_NA_11_WOR_88743,,88743,,Alejandro Sosa,3-Scheduled ,Work Order,16/2/2026 09:30,,,,High,checked,screen_is_black,,,On Track,alejandro.sosadk@gmail.com,JEREZ DE LA FRONTERA - Vinted06924 - ES002294 | Screen is black-fsId=194812,"CTRA. N-IV, PK 639,500 11408 JEREZ DE LA FRONTERA",Vinted06924,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/689a1fd853ef9a3e2a8a6bd4,,Work order,,194812,Work order,https://bloqit.freshservice.com/a/tickets/194812,https://bloqit.dronahq.io/livesupport/Comments/88743,,Work Order - Maintenance,Work order,,,,,,,-6.15578970,36.69152970,,,,,88743,On Track,689a1fd853ef9a3e2a8a6bd4,Jerez - Area Sur,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,11408,JEREZ DE LA FRONTERA,"Reporting Category: 
+screen_is_black
+--------------
+Problem Description: 
+Bloq unreachable/Offline
+--------------
+Special Instructions: 
+This Bloq is currently disconnected, lets please search for power issues. 
+
+
+Required spares :USB Cable Modem, Antenna 2J, CPU, Modem Adapter, Modem with SIM, PS3 30G, SD Card, USB Hub
+Optional spares: 
+--------------
+
+Additional Instructions: Bloq offline please make sure to call LP 1st
+
+--------------
+Client Description: 
+Description: - Comment: No comment - VCarrier Admin URL: https://admin.vintedgo.com/points/133019 ___________________________________________________________ - Bloqit-ID: 689a1fd853ef9a3e2a8a6bd4 - Version: NEXT V-LOCKER BATTERY2.0.1 - Bloq Page: https://admin.bloq.it/en/bloq-admin/list/689a1fd853ef9a3e2a8a6bd4
+
+FreshService Ticket ID: 194812
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,  +34617969405,,Spain
+W_NA_11_WOR_88373,,88373,,Alejandro Sosa,3-Scheduled ,Work Order,16/2/2026 10:30,,,,High,,screen_is_black,,,On Track,alejandro.sosadk@gmail.com,EL PUERTO DE SANTA MARÍA - Vinted06841 - ES000037 | Screen is black-fsId=194122,"C. Río Tavizna, 34 11500 El Puerto de Santa María",Vinted06841,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/67d4535deac5554443121c82,,Work order,,194122,Work order,https://bloqit.freshservice.com/a/tickets/194122,https://bloqit.dronahq.io/livesupport/Comments/88373,,Work Order - Maintenance,Work order,,,,,,,-6.22046620,36.59548910,,,,,88373,On Track,67d4535deac5554443121c82,On Pro Box,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,11500,El Puerto de Santa María,"Reporting Category: 
+screen_is_black
+--------------
+Problem Description: 
+Bloq lost connection with modem and/or power failure.
+--------------
+Special Instructions: 
+Check Power
+Check USB cables and USB HUB
+Check CPU and Modem
+
+Required spares :USB Cable HUB, USB Hub, USB Cable Modem, Modem with SIM, CPU, Cable Power
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+Description: - Comment: No comment - VCarrier Admin URL: https://admin.vintedgo.com/points/129631 ___________________________________________________________ - Bloqit-ID: 67d4535deac5554443121c82 - Version: V4.0.13 - Bloq Page: https://admin.bloq.it/en/bloq-admin/list/67d4535deac5554443121c82
+
+FreshService Ticket ID: 194122
+--------------",- Monday: 07:00-13:00;17:15-22:30 - Tuesday: 07:00-13:00;16:00-22:30 - Wednesday: 07:00-13:00;17:15-22:30 - Thursday: 07:00-13:00;16:00-22:30 - Friday: 07:00-13:00;17:15-22:30 - Saturday: 09:00-14:00 - Sunday: closed,606341132  ,,Spain
+B_NA_50_WOR_88460,,88460,,Carlos Figueredo,3-Scheduled ,Work Order,16/2/2026 09:25,,,,High,checked,battery_under_voltage,,,On Track,cfigueredo@dicharger.es,N/A - N/A | battery_under_voltage,"AV AUGUSTA BILBILIS,15",Inpost14163,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/68d695fc844b468155d17f1d,,Work order,,,Battery Swap,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/88460,,Work Order - Maintenance,Work order,,,,,,,-1.64653690,41.35221270,,,,,88460,On Track,68d695fc844b468155d17f1d,REPSOL- R AB CODO -ES CALATAYUD,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Inpost,50300,Calatayud,"Reporting Category: 
+battery_under_voltage
+--------------
+Problem Description: 
+Battery Alert - Bat1: 84.2%/13.1V | Bat2: 94.4%/12V
+--------------
+Special Instructions: 
+Battery Alert - Recommended Actions:
+
+Monitor battery levels
+Schedule preventive maintenance if trend continues
+
+Location: N/A, ES
+Partner: N/A
+BloqIt: N/A
+Bloq Page: https://admin.bloq.it/en/bloqs/68d695fc844b468155d17f1d
+
+Required spares :
+Optional spares: 
+Required spares :
+Optional spares: 
+.   
+.   
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+DataDog Battery Alert
+
+Bloq Page: https://admin.bloq.it/en/bloqs/68d695fc844b468155d17f1d
+
+=== BloqIt Information ===
+Partner: N/A
+Location: N/A, ES
+BloqIt Name: N/A
+
+=== Battery Status ===
+Battery 1: 84.2% SOC | 13.1V
+Battery 2: 94.4% SOC | 12V
+--------------",,,,Spain
+D7_OU_30_SUR_86119,,86119,,EGIB_T1,3-Scheduled ,Survey,16/2/2026 09:00,,,,,,,,,On Track,,,4 Rue Des Arenes 30127 Bellegarde,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/86119,,Location Survey,Survey,,,,,,,4.51240000,43.75649000,,,,,86119,Date requested,,Carrefour Market,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,30127,Bellegarde,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33 6 83 37 62 98  +334.66.01.61.22,,France
+D7_OU_26_SUR_85640,,85640,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 10:00,,,,,,,,,On Track,,,19 Chemin Du Mûrier 26540 Mours-saint-eusèbe,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/85640,,Location Survey,Survey,,,,,,,5.05991500,45.06081000,,,,,85640,New request,,Moodstore,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,26540,Mours-saint-eusèbe,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33664515967  ,,France
+D7_OU_63_SUR_83740,,83740,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 10:00,,,,,,,,,On Track,,,Avenue De Clermont 63800 Cournon-d'auvergne,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/83740,,Location Survey,Survey,,,,,,,3.17540220,45.74497520,,,,,83740,New request,,Jardinerie Teyssier,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,63800,Cournon-d'auvergne,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33683775771  +33665166579,,France
+D7_OU_24_SUR_76438,,76438,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 10:00,,,,,,,,,On Track,,,156 Avenue Maréchal Juin 24000 Périgueux,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76438,,Location Survey,Survey,,,,,,,0.70409330,45.18640840,,,,,76438,New request,,Supermarché Netto,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,24000,Périgueux,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,  +33638432410,,France
+D7_OU_24_SUR_76507,,76507,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 12:00,,,,,,,,,On Track,,,Avenue Winston Churchill 24660 Coulounieix-Chamiers,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76507,,Location Survey,Survey,,,,,,,0.68937800,45.17145900,,,,,76507,New request,,Intermarché Super,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,24660,Coulounieix-Chamiers,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,  +33676845233,,France
+D7_OU_87_SUR_76420,,76420,,FRSANPAR_T1,3-Scheduled ,Survey,19/2/2026 14:00,,,,,,,,,On Track,,,Quai Salvador Allende 87000 Limoges,,19/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76420,,Location Survey,Survey,,,,,,,1.26384010,45.82215640,,,,,76420,New request,,Lav'up,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,87000,Limoges,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,"+33644073469, +33607111430  ",,France
+D9_OU_27_SUR_86045,,86045,,FRSANPAR_T1,3-Scheduled ,Survey,20/2/2026 14:00,,,,,,,,,On Track,,,Rue du 18 Juin 1940 27120 Pacy-sur-Eure,,20/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/86045,,Location Survey,Survey,,,,,,,1.39806300,49.00941200,,,,,86045,New request,,Bricomarché,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,27120,Pacy-sur-Eure,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33232226994  +33 6 81 45 63 22,,France
+D8_IN_64_SUR_84884,,84884,,FRSANPAR_T1,3-Scheduled ,Survey,19/2/2026 16:04,,,,,,,,,On Track,,,Avenue du Président Kennedy 64000 Pau,,19/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/84884,,Location Survey,Survey,,,,,,,-0.36502115,43.31094113,,,,,84884,New request,,Centre Commercial KENNEDY 64000 Pau - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,64000,Pau,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+https://mondialrelay.jotform.com/server.php?action=getSubmissionPDF&sid=6411680398518651292&formID=243392103936355
+, Deployment done by Bloqit:  YES Works done by Bloqit:  No
+ 
+Required spares : 
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",,06 80 41 39 83,,France
+D7_OU_34_SUR_87340,,87340,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 10:00,,,,,,,,,On Track,,,4 Rue De La Chevêche 03410 Domérat,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/87340,,Location Survey,Survey,,,,,,,2.56282020,46.36478660,,,,,87340,New request,,E. Leclerc,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,3410,Domérat,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33666188107  ,,France
+D7_OU_25_SUR_86753,,86753,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 14:00,,,,,,,,,On Track,,,7 Rue Thomas Edison 25000 Besançon,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/86753,,Location Survey,Survey,,,,,,,5.98137030,47.23414350,,,,,86753,New request,,Locakase,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,25000,Besançon,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33673630690  ,,France
+D7_OU_25_SUR_87885,,87885,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 11:00,,,,,,,,,On Track,,,1 Rte D'osselle 25320 Torpes,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/87885,,Location Survey,Survey,,,,,,,5.85224300,47.13920600,,,,,87885,New request,,Consigne - Rte D'osselle,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,25320,Torpes,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,(066) 557-2044,,France
+D8_OU_69_SUR_86223,,86223,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 09:00,,,,,,,,,On Track,,,2 Avenue du Dauphiné 69360 Sérézin-du-Rhône,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/86223,,Location Survey,Survey,,,,,,,4.81967170,45.62852270,,,,,86223,New request,,U Express Et Drive,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,69360,Sérézin-du-Rhône,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 08:00-20:00 - Tuesday: 08:00-20:00 - Wednesday: 08:00-20:00 - Thursday: 08:00-20:00 - Friday: 08:00-20:00 - Saturday: 08:00-20:00 - Sunday: 08:00-13:00,,,France
+D7_OU_87_SUR_87423,,87423,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 10:00,,,,,,,,,On Track,,,1 Rue Du Docteur Bergonié 87100 Limoges,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/87423,,Location Survey,Survey,,,,,,,1.27392700,45.84419000,,,,,87423,New request,,U Express,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,87100,Limoges,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33 5 55 04 22 46  +33649712741,,France
+D7_OU_21_SUR_76367,,76367,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 17:00,,,,,,,,,On Track,,,Imp. Des Genevrois 21410 Ancey,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76367,,Location Survey,Survey,,,,,,,6.12367730,45.89789390,,,,,76367,New request,,Consigne - Imp. Des Genevrois,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,21410,Ancey,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33380232869  +33613831534,,France
+D10_OU_28_SUR_80238,,80238,,FRSANPAR_T1,3-Scheduled ,Survey,18/2/2026 15:00,,,,,,,,,On Track,,,"1 Pl. Winston Churchill, 28400 Nogent-le-Rotrou, France",,18/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/80238,,Location Survey,Survey,,,,,,,0.83124030,48.31372560,,,,,80238,New request,,Rapid Market 28400 Nogent Le Rotrou - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,28400,Nogent-le-Rotrou,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",,(068) 622-5636,,France
+D7_OU_28_SUR_88171,,88171,,FRSANPAR_T1,3-Scheduled ,Survey,18/2/2026 11:00,,,,,,,,,On Track,,,2 Rue Du Sénateur Jacques Gautron 28630 Sours,,18/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/88171,,Location Survey,Survey,,,,,,,1.60043000,48.41377130,,,,,88171,New request,,Sas Fabian Coccinelle Supermarche,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,28630,Sours,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33237845912  ,,France
+D7_OU_58_SUR_88080,,88080,,FRSANPAR_T1,3-Scheduled ,Survey,20/2/2026 10:00,,,,,,,,,On Track,,,3 Bis Boulevard De La République 58000 Nevers,,20/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/88080,,Location Survey,Survey,,,,,,,3.18932300,47.00185660,,,,,88080,New request,,Stockerseul,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,58000,Nevers,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33770618088  ,,France
+D6_OU_69_SUR_16365,,16365,,FRSANPAR_T1,3-Scheduled ,Survey,20/2/2026 10:30,,,,Medium,,,,,On Track,,,209 Bd Pinel 69500 Bron,,20/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/16365,,Location Survey,Survey,,,,,,,4.88851400,45.73191000,,,,,16365,New request,,Galeries Lafayette Lyon Bron,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,69500,Bron,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33 6 78 80 25 38  +33 6 78 80 25 38,,France
+D7_OU_71_SUR_87923,,87923,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 10:00,,,,,,,,,On Track,,,1 Avenue Max Dormoy 71230 Saint-vallier,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/87923,,Location Survey,Survey,,,,,,,4.32826110,46.64296000,,,,,87923,New request,,Ameo Renovation,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,71230,Saint-vallier,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,"+33625804821, +33619780248  ",,France
+D7_OU_31_SUR_76777,,76777,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 10:00,,,,,,,,,On Track,,,1 Rue Des Vignes 31780 CASTELGINEST,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76777,,Location Survey,Survey,,,,,,,1.43865980,43.69540220,,,,,76777,New request,,U Express,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31780,CASTELGINEST,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,"+33561465077, +33561465077  ",,France
+D7_OU_31_SUR_76818,,76818,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 11:00,,,,,,,,,On Track,,,2 Boulevard Hélène Viannay 31100 Toulouse,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76818,,Location Survey,Survey,,,,,,,1.45412250,43.60131540,,,,,76818,New request,,Point Sun Toulouse,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31100,Toulouse,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33663367007  ,,France
+D7_OU_31_SUR_88426,,88426,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 13:00,,,,,,,,,On Track,,,"6 f, avenue des mûriers 31120 roques",,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/88426,,Location Survey,Survey,,,,,,,1.36308750,43.50595340,,,,,88426,New request,,Bureau Vallée Roques Sur Garonne - Papeterie Et Photocopie,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31120,roques,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33582959988  +33610115470,,France
+D7_OU_31_SUR_76422,,76422,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 09:00,,,,,,,,,On Track,,,16 Rue de la Briqueterie 31150 Bruguières,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76422,,Location Survey,Survey,,,,,,,1.39688090,43.71887450,,,,,76422,New request,,Consigne - Rue De La Briqueterie (Parking),https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31150,Bruguières,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,"+33562229933  +33562229933, +33 5 62 22 99 33",,France
+D7_OU_31_SUR_76668,,76668,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 10:30,,,,,,,,,On Track,,,47 route de paris 31140 aucamville,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76668,,Location Survey,Survey,,,,,,,1.41111960,43.67113010,,,,,76668,New request,,Bureau Vallée Aucamville (Toulouse) - Papeterie Et Photocopie,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31140,aucamville,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33534418400  +33663633444,,France
+D7_OU_31_SUR_76499,,76499,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 09:30,,,,,,,,,On Track,,,Parc Xeraco 31150 Bruguières,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76499,,Location Survey,Survey,,,,,,,1.41350380,43.72815300,,,,,76499,New request,,Consigne - Parking Parc Xeraco,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31150,Bruguières,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,"+33562229933  +33562229933, +33 5 62 22 99 33",,France
+D8_OU_69_SUR_86230,,86230,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 09:00,,,,,,,,,On Track,,,2 Avenue du Dauphiné 69360 Sérézin-du-Rhône,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/86230,,Location Survey,Survey,,,,,,,4.81967170,45.62852270,,,,,86230,New request,,U Express Et Drive,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,69360,Sérézin-du-Rhône,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 08:00-20:00 - Tuesday: 08:00-20:00 - Wednesday: 08:00-20:00 - Thursday: 08:00-20:00 - Friday: 08:00-20:00 - Saturday: 08:00-20:00 - Sunday: 08:00-13:00,,,France
+D7_OU_38_SUR_88227,,88227,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 14:00,,,,,,,,,On Track,,,Zi De La Mure 38350 Susville,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/88227,,Location Survey,Survey,,,,,,,5.78641810,44.90619620,,,,,88227,New request,,Carrefour Market,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,38350,Susville,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,07 89 55 58 55  ,,France
+D7_OU_38_SUR_86630,,86630,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 14:00,,,,,,,,,On Track,,,16 Cour Vallier 38160 Saint-marcellin,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/86630,,Location Survey,Survey,,,,,,,5.31657430,45.15306990,,,,,86630,New request,,Netto,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,38160,Saint-marcellin,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+survey to be done from 2nd march
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33686008355  ,,France
+D7_OU_94_SUR_87603,,87603,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 09:00,,,,,,,,,On Track,,,12 Rue Des Anciennes Cristalleries 94600 Choisy-le-roi,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/87603,,Location Survey,Survey,,,,,,,2.40732750,48.77018380,,,,,87603,New request,,Magic Form Choisy,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,94600,Choisy-le-roi,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33615195208  ,,France
+D12_OU_47_SUR_84386,,84386,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 14:00,,,,,,,,,On Track,,,"14 Av. du Général de Gaulle, 47180 Sainte-Bazeille",,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/84386,,Location Survey,Survey,,,,,,,0.09568897,44.52950195,,,,,84386,New request,,Dominique 47180 Sainte Bazeille - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,47180,Sainte-Bazeille,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+https://mondialrelay.jotform.com/server.php?action=getSubmissionPDF&sid=6284039722024095019&formID=242532199746364
+ 
+Required spares : 
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",,06 51 18 00 39,,France
+D7_OU_87_SUR_76435,,76435,,FRSANPAR_T1,3-Scheduled ,Survey,19/2/2026 16:00,,,,,,,,,On Track,,,62 Rue Philippe Lebon 87280 Limoges,,19/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76435,,Location Survey,Survey,,,,,,,1.28158720,45.88340370,,,,,76435,New request,,Litrimarché Limoges,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,87280,Limoges,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33645611810  ,,France
+D6_OU_31_SUR_76451,,76451,,FRSANPAR_T1,3-Scheduled ,Survey,18/2/2026 09:00,,,,,,,,,On Track,,,1 All. des Nymphéas 31240 L'Union,,18/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76451,,Location Survey,Survey,,,,,,,1.47588100,43.65495520,,,,,76451,New request,,Stations-e Multiservices - Les Ambassadeurs 01 ,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31240,L'Union,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33 1 85 12 52 40  +33185125240,,France
+D9_OU_31_SUR_76429,,76429,,FRSANPAR_T1,3-Scheduled ,Survey,18/2/2026 10:00,,,,,,,,,On Track,,,81 Rue de Negreneys 31200 Toulouse,,18/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76429,,Location Survey,Survey,,,,,,,1.44146450,43.62149740,,,,,76429,New request,,Avenir Judo 31,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31200,Toulouse,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,+33612527721  ,,France
+D6_OU_31_SUR_88283,,88283,,FRSANPAR_T1,3-Scheduled ,Survey,16/2/2026 14:00,,,,,,,,,On Track,,,34 Rue de la Rotonde 3100 Montluçon,,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/88283,,Location Survey,Survey,,,,,,,2.60233800,46.33239010,,,,,88283,New request,,Intermarché,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,3100,Montluçon,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:59,04 70 08 73 73  ,,France
+D7_OU_31_SUR_76791,,76791,,FRSANPAR_T1,3-Scheduled ,Survey,17/2/2026 11:00,,,,,,,,,On Track,,,Route de Toulouse 31820 Pibrac,,17/2/2026,https://admin.bloq.it/en/bloq-admin/list/,,Survey,,,Deployment,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/76791,,Location Survey,Survey,,,,,,,1.28482600,43.60891100,,,,,76791,New request,,Carrefour market,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,31820,Pibrac,"Reporting Category: 
+
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",- Monday: 00:00-23:59 - Tuesday: 00:00-23:59 - Wednesday: 00:00-23:59 - Thursday: 00:00-23:59 - Friday: 00:00-23:59 - Saturday: 00:00-23:59 - Sunday: 00:00-23:58,+33534572210  ,,France
+W4_NA_27_WOR_80539,,80539,,João Dias,3-Scheduled ,Work Order,16/2/2026 09:50,,,,Low,,All Retrofit,,,Awaiting Approval (Client),joao.dias@bloq.it,,"LU-530 PK 1,800 , 27003 , CASTELO DE ARRIBA",GLS06075,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/67f94fa94478d58d5e99ba1d,,Work order,,,Work order,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/80539,,Work Order - Maintenance,Work order,,,,,,,-7.53971998,43.01191513,,,,,80539,On Track,67f94fa94478d58d5e99ba1d,,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,GLS,27003,Lugo,"Reporting Category: 
+All Retrofit
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",,,,Spain
+W4_NA_30_WOR_80546,,80546,,João Dias,3-Scheduled ,Work Order,16/2/2026 09:51,,,,Low,,All Retrofit,,,Awaiting Approval (Client),joao.dias@bloq.it,,"AV. DE LOS DEPORTES, 12 , 27004 , LUGO",GLS06096,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/6814f79a6ef6e61888d0bf27,,Work order,,,Work order,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/80546,,Work Order - Maintenance,Work order,,,,,,,-1.78424622,38.08699385,,,,,80546,On Track,6814f79a6ef6e61888d0bf27,Locker GLS NXT - 24/7 GALP Lugo,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,GLS,30430,Cehegín,"Reporting Category: 
+All Retrofit
+--------------
+Problem Description: 
+
+--------------
+Special Instructions: 
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+
+--------------",,,,Spain
+W_NA_50_WOR_88682,,88682,,Julian Cefalo,3-Scheduled ,Work Order,16/2/2026 08:30,,,,Medium,,compartment_does_not_open,,,On Track,juliancefalo@gmail.com,N/A - N/A - N/A | Compartment does not open-fsId=194632,"Calle Ricia, 10 50005 Zaragoza",Vinted06989,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/68c454330395de719e28fa6e,,Work order,,194632,Work order,https://bloqit.freshservice.com/a/tickets/194632,https://bloqit.dronahq.io/livesupport/Comments/88682,,Work Order - Maintenance,Work order,,,,,,,-0.89117200,41.64583590,,,,,88682,On Track,68c454330395de719e28fa6e,Ciber Gran Via,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,VintedGo,50005,Zaragoza,"Reporting Category: 
+compartment_does_not_open
+--------------
+Problem Description: 
+Door J1 has not been closed since it's last opening at the 2026-02-11, 11:16:39 timestamp. External bloq ID: ES002433. Address:  Calle Ricia, 10, Zaragoza, 50005, ES
+--------------
+Special Instructions: 
+Bloq information: External bloq ID: ES002433. Address:  Calle Ricia, 10, Zaragoza, 50005, ES
+1 - Check the lock / cable / Kerong plug. 
+2- Ensure not only the door in question but that all doors are working as expected
+
+Required spares :Kerong Lock Hook, Cable Kerong 3m, Kerong Board Modbus, Kerong Lock
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+Description: - Comment: Door does not open during driver pickup attempt - Compartment: 68c454330395de719e28fa9a - VCarrier Admin URL: https://admin.vintedgo.com/points/133311 ___________________________________________________________ - Bloqit-ID: N/A - Version: N/A - Bloq Page: N/A
+
+FreshService Ticket ID: 194632
+--------------",- Monday: 11:00-20:30 - Tuesday: 11:00-20:30 - Wednesday: 11:00-20:30 - Thursday: 11:00-20:30 - Friday: 11:00-20:30 - Saturday: 11:00-20:30 - Sunday: 11:00-20:30,  +34621044345,,Spain
+W_NA_31_WOR_88412,,88412,,Julian Cefalo,3-Scheduled ,Work Order,16/2/2026 10:00,,,,High,checked,Other,,,Awaiting Approval (Client),juliancefalo@gmail.com,701 - Locker GLS NXT - Eroski Tudela - It does not generate received-fsId=190684,Carretera Zaragoza sn,GLS06101,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/6814f79a08fe85a2093cdfc5,,Work order,,190684,Work order,https://bloqit.freshservice.com/a/tickets/190684,https://bloqit.dronahq.io/livesupport/Comments/88412,,Work Order - Maintenance,Work order,,,,,,,-1.58605000,42.03300000,,,,,88412,On Track,6814f79a08fe85a2093cdfc5,EROSKI TUDELA,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,GLS,31500,Tudela,"Reporting Category: 
+Other
+--------------
+Problem Description: 
+parcel retrieve / doors maintenance 
+--------------
+Special Instructions: 
+We need  joint maintenance with POC from GLS  to check the doors in mainatence mode and to clear all the rent from the locker and retrieve them.
+-Check doors in maintenance mode 
+- Retrieve all the parcels in the locker (take picture from all the parcels and send them to the Live Support)
+ 
+Spares: Door locks
+
+POC:
++34 635 15 73 21 - Whatssap
++34 911 11 86 68 - Calls.
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+Description: 312057545462050016  315699867849230011  Ambos paquetes no generaron un recibo y tenemos más envíos retenidos durante las últimas dos semanas debido a este problema.  Hemos adjuntado un vídeo que muestra al equipo de entrega realizando la operación correctamente, pero el locker no ha generado un recibo.  Por favor envíe un técnico para recuperar los paquetes lo antes posible.
+
+FreshService Ticket ID: 190684
+--------------",,,,Spain
+L_NA_28_WOR_88946,,88946,,Mario Martín,5-Awaiting Validation,Work Order,16/2/2026 08:30,,,12/2/2026 17:31,High,checked,locker_other,,,On Track,mario.martin@bloq.it,MÓSTOLES - Vinted06495 - ES000111 | Locker other problem-fsId=194534,"Calle Plasencia, 43 28936 Móstoles",Vinted06495,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/67d44f54944dfce0495a82ae,,Work order,,194534,Light WO,https://bloqit.freshservice.com/a/tickets/194534,https://bloqit.dronahq.io/livesupport/Comments/88946,,Work Order - Maintenance,Work order,,,,,,,-3.87844700,40.35180700,,,,,88946,On Track,67d44f54944dfce0495a82ae,Gimnasio En Villaviciosa De Odón - Musculación - Cross Training - Boxeo - Pilates - Yoga - Esc Sport Center,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/recPuCWFXlJBaYIcm?home=pagbRJ9eTa9qcKvoP,VintedGo,28936,Móstoles,"Reporting Category: 
+locker_other
+--------------
+Problem Description: 
+Scanner damaged and HUB issues | Contact Support
+--------------
+Special Instructions: 
+NOTES FOR LIVE SUPPORT & FIELD SERVICES
+
+Summary of The issue: (brief description of what was tried before and what's seems to be the issue - always add as private note + copy into the 'Problem Description' field)
+- Replace scanner and check the HUB connections. MB not detected. Bloq not booting.Contact support for assistance
+
+Required spares :USB Cable HUB, USB Hub, SD Card, Scanner RT870, USB Cable Scanner
+Optional spares: USB Cable RS485, RS485 Converter, MB ESP32
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+Description: - Comment: Dañado - VCarrier Admin URL: https://admin.vintedgo.com/points/129894 ___________________________________________________________ - Bloqit-ID: 67d44f54944dfce0495a82ae - Version: N/A - Bloq Page: https://admin.bloq.it/en/bloq-admin/list/67d44f54944dfce0495a82ae?page=1
+
+FreshService Ticket ID: 194534
+--------------",- Monday: 7:00-22:30 - Tuesday: 7:00-22:30 - Wednesday: 7:00-22:30 - Thursday: 7:00-22:30 - Friday: 7:00-22:30 - Saturday: 9:00-15:00 - Sunday: 9:00-15:00,+34661885974  ,,Spain
+W_NA_28_WOR_86076,,86076,,Mario Martín,3-Scheduled ,Work Order,16/2/2026 17:10,,,,High,checked,Other,,,Awaiting Approval (Client),mario.martin@bloq.it,329 - Locker GLS NXT - LAS TABLAS SPORT CLUB - Screen does not respond-fsId=189108,"Av. del Camino de Santiago, 25, Fuencarral-El Pardo, 28050 Madrid",GLS32309,16/2/2026,https://admin.bloq.it/en/bloq-admin/list/69395ddae6354046476c20b2,,Work order,,189108,Work order,https://bloqit.freshservice.com/a/tickets/189108,https://bloqit.dronahq.io/livesupport/Comments/86076,,Work Order - Maintenance,Work order,,,,,,,-3.67348803,40.50404695,,,,,86076,On Track,69395ddae6354046476c20b2,Locker GLS NXT - LAS TABLAS SPORT CLUB,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,GLS,28050,Madrid,"Reporting Category: 
+Other
+--------------
+Problem Description: 
+Faulty Screen / door damage 
+--------------
+Special Instructions: 
+NOTES FOR LIVE SUPPORT & FIELD SERVICES
+
+Summary of The issue:
+
+- Screen unresponsive - We need to check if the screen needs replacement - the locker responds to ssh and commands. Client reports is not working properly. 
+- Check door A4 in maintenance and the doors in triage mode
+
+Notes for FS:
+1 - We need to check the screen and replace if needed 
+
+Notes for LS:
+1 - Make sure that the locker remains fully functional and communicates well with BO. Let it sleep and ask LS to send awake to see if it receives the sms and it's functional. 
+2 - Verify that the batteries have the correct values: bcli -gb f
+3 - TEST all doors 
+4 - Verify that the maintenance technician has completed the necessary tests: jb -S ""1d ago"" -o cat | grep -e ""===== All tests DONE! ====="" -e ""Passed:""
+5 - or brf -o cat and check for any errors on service start
+6 - Update maintenance code after.
+ 
+Spares:
+ Next display
+ door latchs
+
+Required spares :
+Optional spares: 
+  Spare parts needed - top lid lock
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+Description: Buenos días, nuestros repartidores informan que la pantalla no funciona para realizar las entregas. Asimismo, los destinatarios nos informan que no pueden ingresar el código PIN.
+
+FreshService Ticket ID: 189108
+--------------",,,,Spain
+B_NA_06_WOR_87826,,87826,,SANH Battery Swap ,3-Scheduled ,Work Order,14/2/2026 13:30,,,,High,checked,battery_under_voltage,,,On Hold (Bloqit),m1@sanhmobility.com,N/A - N/A | battery_under_voltage,"49, Bd Général Delfino 06300 Nice",Inpost14039,14/2/2026,https://admin.bloq.it/en/bloq-admin/list/68d695fee30e34a57fa4256c,,Work order,,,Battery Swap,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/87826,,Work Order - Maintenance,Work order,,,,,,,7.28829120,43.70439030,,,,,87826,On Hold (Bloqit),68d695fee30e34a57fa4256c,Netto Delfino 06300 Nice - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,06300,Nice,"Reporting Category: 
+battery_under_voltage
+--------------
+Problem Description: 
+Battery Alert - Bat1: 46.7%/11V [LOW] | Bat2: 50.6%/11.1V [LOW]
+--------------
+Special Instructions: 
+Battery Alert - Recommended Actions:
+
+[CRITICAL] Battery replacement required
+CM=4KME6W
+Battery 1
+46.6%
+Current:0.2 Amps
+Voltage:10.8 v
+Battery 2
+50.5%
+Current:0.2 Amps
+Voltage:10.9 v
+Steps:
+1. Verify battery connections
+2. Check charging system
+3. Replace low batteries or under voltage if needed
+
+Location: N/A, FR
+Partner: N/A
+BloqIt: N/A
+Bloq Page: https://admin.bloq.it/en/bloqs/68d695fee30e34a57fa4256c
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+DataDog Battery Alert
+
+Bloq Page: https://admin.bloq.it/en/bloqs/68d695fee30e34a57fa4256c
+
+=== BloqIt Information ===
+Partner: N/A
+Location: N/A, FR
+BloqIt Name: N/A
+
+=== Battery Status ===
+Battery 1: 46.7% SOC | 11V [LOW]
+Battery 2: 50.6% SOC | 11.1V [LOW]
+--------------",,04 97 09 87 00,,France
+B_NA_78_WOR_80743,,80743,,SANH Battery Swap ,3-Scheduled ,Work Order,14/2/2026 13:41,,,,High,checked,battery_under_voltage,,,On Hold (Bloqit),m1@sanhmobility.com,Le Chesnay-Rocquencourt - Inpost09325 | battery_under_voltage,"25 Rue des Érables, 78150 Le Chesnay-Rocquencourt, France",Inpost09325,14/2/2026,https://admin.bloq.it/en/bloq-admin/list/68b5e4d1c950f1ce518d2f7e,,Work order,,,Battery Swap,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/80743,,Work Order - Maintenance,Work order,,,,,,,2.11868137,48.83420421,,,,,80743,On Hold (Bloqit),68b5e4d1c950f1ce518d2f7e,U Express 78150 Le Chesnay-Rocquencourt - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,78150,Le Chesnay-Rocquencourt,"Reporting Category: 
+battery_under_voltage
+--------------
+Problem Description: 
+Battery Alert - Bat1: 85.9%/13.3V | Bat2: 90.5%/12V
+--------------
+Special Instructions: 
+Battery Alert - Recommended Actions:
+
+Monitor battery levels
+Schedule preventive maintenance if trend continues
+
+Location: Le Chesnay-Rocquencourt, FR
+Partner: InPost
+BloqIt: Inpost09325
+Bloq Page: https://admin.bloq.it/en/bloqs/68b5e4d1c950f1ce518d2f7e
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+DataDog Battery Alert
+
+Bloq Page: https://admin.bloq.it/en/bloqs/68b5e4d1c950f1ce518d2f7e
+
+=== BloqIt Information ===
+Partner: InPost
+Location: Le Chesnay-Rocquencourt, FR
+BloqIt Name: Inpost09325
+
+=== Battery Status ===
+Battery 1: 85.9% SOC | 13.3V
+Battery 2: 90.5% SOC | 12V
+--------------",,06.37.51.19.20,,France
+B_NA_91_WOR_80715,,80715,,SANH Battery Swap ,3-Scheduled ,Work Order,14/2/2026 13:41,,,,High,checked,battery_under_voltage,,,On Hold (Bloqit),m1@sanhmobility.com,Ballainvilliers - Inpost16489 | battery_under_voltage,"112 Avenue de la Division Leclerc, 91160 Ballainvilliers, France",Inpost16489,14/2/2026,https://admin.bloq.it/en/bloq-admin/list/6917611634b17369717fb842,,Work order,,,Battery Swap,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/80715,,Work Order - Maintenance,Work order,,,,,,,2.27958094,48.66904760,,,,,80715,On Hold (Bloqit),6917611634b17369717fb842,Neom Loc Et Vente 91160 Ballainvilliers - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,91160,Ballainvilliers,"Reporting Category: 
+battery_under_voltage
+--------------
+Problem Description: 
+Battery Alert - Bat1: 99.2%/12V | Bat2: 99.2%/13.3V | Bat3: 99.8%/13.3V
+--------------
+Special Instructions: 
+Battery Alert - Recommended Actions:
+
+Monitor battery levels
+Schedule preventive maintenance if trend continues
+
+Location: Ballainvilliers, FR
+Partner: InPost
+BloqIt: Inpost16489
+Bloq Page: https://admin.bloq.it/en/bloqs/6917611634b17369717fb842
+ 
+Required spares : 
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+DataDog Battery Alert
+
+Bloq Page: https://admin.bloq.it/en/bloqs/6917611634b17369717fb842
+
+=== BloqIt Information ===
+Partner: InPost
+Location: Ballainvilliers, FR
+BloqIt Name: Inpost16489
+
+=== Battery Status ===
+Battery 1: 99.2% SOC | 12V
+Battery 2: 99.2% SOC | 13.3V
+Battery 3: 99.8% SOC | 13.3V
+--------------",,+33776470337,,France
+B_NA_91_WOR_80736,,80736,,SANH Battery Swap ,3-Scheduled ,Work Order,14/2/2026 13:41,,,,High,checked,battery_under_voltage,,,On Hold (Bloqit),m1@sanhmobility.com,Sainte-Geneviève-des-Bois - Inpost16487 | battery_under_voltage,"309B Av. Gabriel Péri, 91700 Sainte-Geneviève-des-Bois, France",Inpost16487,14/2/2026,https://admin.bloq.it/en/bloq-admin/list/6917611654bf9e5e506f4c64,,Work order,,,Battery Swap,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/80736,,Work Order - Maintenance,Work order,,,,,,,2.33999080,48.64367626,,,,,80736,On Hold (Bloqit),6917611654bf9e5e506f4c64,Relayshop Services 91700 Sainte-Geneviève-des-Bois - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,91700,Sainte-Geneviève-des-Bois,"Reporting Category: 
+battery_under_voltage
+--------------
+Problem Description: 
+Battery Alert - Bat1: 98.9%/12V | Bat2: 99.3%/13.3V | Bat3: 99.5%/13.3V
+--------------
+Special Instructions: 
+Battery Alert - Recommended Actions:
+
+Monitor battery levels
+Schedule preventive maintenance if trend continues
+
+Location: Sainte-Geneviève-des-Bois, FR
+Partner: InPost
+BloqIt: Inpost16487
+Bloq Page: https://admin.bloq.it/en/bloqs/6917611654bf9e5e506f4c64
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+DataDog Battery Alert
+
+Bloq Page: https://admin.bloq.it/en/bloqs/6917611654bf9e5e506f4c64
+
+=== BloqIt Information ===
+Partner: InPost
+Location: Sainte-Geneviève-des-Bois, FR
+BloqIt Name: Inpost16487
+
+=== Battery Status ===
+Battery 1: 98.9% SOC | 12V
+Battery 2: 99.3% SOC | 13.3V
+Battery 3: 99.5% SOC | 13.3V
+--------------",, 06 51 74 33 21,,France
+B_NA_77_WOR_81147,,81147,,SANH Battery Swap ,3-Scheduled ,Work Order,14/2/2026 13:41,,,,High,checked,battery_under_voltage,,,On Hold (Bloqit),m1@sanhmobility.com,Donnemarie-Dontilly - Inpost16701 | battery_under_voltage,"Intermarché SUPER Donnemarie-Dontilly, 2 Rue du Montpensier, 77520 Donnemarie-Dontilly, France",Inpost16701,14/2/2026,https://admin.bloq.it/en/bloq-admin/list/69289f9d630f18de69c03ba8,,Work order,,,Battery Swap,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/81147,,Work Order - Maintenance,Work order,,,,,,,3.13937008,48.47657779,,,,,81147,On Hold (Bloqit),69289f9d630f18de69c03ba8,Intermarché 77520 Donnemarie-Dontilly - Loc. Site (copie),https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,77520,Donnemarie-Dontilly,"Reporting Category: 
+battery_under_voltage
+--------------
+Problem Description: 
+Battery Alert - Bat1: 93.2%/12V | Bat2: 93.8%/13.3V | Bat3: 92.6%/13.3V
+--------------
+Special Instructions: 
+Battery Alert - Recommended Actions:
+
+Monitor battery levels
+Schedule preventive maintenance if trend continues
+
+Location: Donnemarie-Dontilly, FR
+Partner: InPost
+BloqIt: Inpost16701
+Bloq Page: https://admin.bloq.it/en/bloqs/69289f9d630f18de69c03ba8
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+DataDog Battery Alert
+
+Bloq Page: https://admin.bloq.it/en/bloqs/69289f9d630f18de69c03ba8
+
+=== BloqIt Information ===
+Partner: InPost
+Location: Donnemarie-Dontilly, FR
+BloqIt Name: Inpost16701
+
+=== Battery Status ===
+Battery 1: 93.2% SOC | 12V
+Battery 2: 93.8% SOC | 13.3V
+Battery 3: 92.6% SOC | 13.3V
+--------------",,07 62 23 88 78,,France
+B_NA_34_WOR_88454,,88454,,SANH Battery Swap ,3-Scheduled ,Work Order,14/2/2026 10:03,,,,High,checked,battery_under_voltage,,,On Hold (Bloqit),m1@sanhmobility.com,N/A - N/A | battery_under_voltage,"Rte de Clermont, Bédarieux, France",Inpost09293,14/2/2026,https://admin.bloq.it/en/bloq-admin/list/68b5e4d11d54b1f06f8dedfa,,Work order,,,Battery Swap,https://bloqit.freshservice.com/a/tickets/,https://bloqit.dronahq.io/livesupport/Comments/88454,,Work Order - Maintenance,Work order,,,,,,,3.18165777,43.61752981,,,,,88454,On Hold (Bloqit),68b5e4d11d54b1f06f8dedfa,U Express 34600 Bédarieux - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,34600,Bédarieux,"Reporting Category: 
+battery_under_voltage
+--------------
+Problem Description: 
+Battery Alert - Bat1: 51.4%/12.7V | Bat2: 48.6%/10.8V [LOW]
+--------------
+Special Instructions: 
+Battery Alert - Recommended Actions:
+
+[CRITICAL] Battery replacement required
+CM=J5B4LH
+Battery 1
+51.4%
+Current:0 Amps
+Voltage:12.7 v
+Battery 2
+48.6%
+Current:0.3 Amps
+Voltage:10.8 v
+Steps:
+1. Verify battery connections
+2. Check charging system
+3. Replace low batteries or under voltage if needed
+
+Location: N/A, FR
+Partner: N/A
+BloqIt: N/A
+Bloq Page: https://admin.bloq.it/en/bloqs/68b5e4d11d54b1f06f8dedfa
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+DataDog Battery Alert
+
+Bloq Page: https://admin.bloq.it/en/bloqs/68b5e4d11d54b1f06f8dedfa
+
+=== BloqIt Information ===
+Partner: N/A
+Location: N/A, FR
+BloqIt Name: N/A
+
+=== Battery Status ===
+Battery 1: 51.4% SOC | 12.7V
+Battery 2: 48.6% SOC | 10.8V [LOW]
+--------------",,06 32 42 50 90,,France
+W_NA_06_WOR_88237,,88237,,SANH Battery Swap ,3-Scheduled ,Work Order,14/2/2026 10:04,,,,High,checked,Other,,,On Hold (Bloqit),m1@sanhmobility.com,Nice - Inpost14039 - N/A | FR035353 - BQ - Locker écran noir | Screen: Black (not wakeup) - NEXT models-fsId=193968,"49, Bd Général Delfino 06300 Nice",Inpost14039,14/2/2026,https://admin.bloq.it/en/bloq-admin/list/68d695fee30e34a57fa4256c,,Work order,,193968,Work order,https://bloqit.freshservice.com/a/tickets/193968,https://bloqit.dronahq.io/livesupport/Comments/88237,,Work Order - Maintenance,Work order,,,,,,,7.28829120,43.70439030,,,,,88237,On Hold (Bloqit),68d695fee30e34a57fa4256c,Netto Delfino 06300 Nice - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,06300,Nice,"Reporting Category: 
+Other
+--------------
+Problem Description: 
+- Bloq is unreachable.
+--------------
+Special Instructions: 
+Step for FS:
+1 - Check that the batteries are charged and correctly inserted. Replace them if necessary.
+2 - Check network signal on site.
+3 - If none of the above procedures resolves the issue, replace the Modem, CPU or the entire Mallow Kit.
+
+CM=4KME6W
+Battery 1
+46.6%
+Current:0.2 Amps
+Voltage:10.8 v
+Battery 2
+50.5%
+Current:0.2 Amps
+Voltage:10.9 v
+Spares:
+(x2) Next Battery
+(x1) Mallow board
+
+Required spares :
+Optional spares: 
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+Description: Hello team,
+
+We have a report about black screen not waking up
+
+Request created on 09/Feb/26 18:24
+
+Last activity seen on this locker  from our side on 08-02-2026 12:23:38
+
+Last ping received 08-02-2026, 12:23:09
+
+Can you chec    How many doors are blocked :   Remote openning performed : No / Non  Check of communication OK with APM :   Parcel present inside the locker :     -- Compartment and parcels --  Parcel ID  :   Compartment ID :   Parcel collection completed : No / Non  Presence of condensation :   Damages areas :     Application is running :   Error message on the screen :   What is the message :     -- Screen information --  Screen color :   Affected menu :   Windows screen displayed ;   What is presented on the screen :     -- Barcode Informations --  Beep during scanning :   Barcode distance :   Scanner under the sun :   Red light beam :   Barcode is recognized when typed :   Barcode example :   Functional touch screen :   Number of barcodes not identified :     -- Driver informations --  Driver id :   Transport company :   Deconnexion button :   Driver is assigned to the same depot as the locker :     Locked APM :    Type of risk :     -- Camera/DVR --   Type of DVR :     -- Lighting --  Type of lighting :  ___________________________________________________________ - Bloqit-ID: 68d695fee30e34a57fa4256c - Version: NEXT STD v2.1.2 Battery - Bloq Page: https://admin.bloq.it/en/bloq-admin/list/68d695fee30e34a57fa4256c
+
+FreshService Ticket ID: 193968
+--------------",,04 97 09 87 00,,France
+W_NA_34_WOR_87417,,87417,,SANH Battery Swap ,3-Scheduled ,Work Order,14/2/2026 10:03,,,,Medium,checked,Other,,,On Hold (Bloqit),m1@sanhmobility.com,NA 34500 - Inpost14037 - undefined - Connection Issue - POST Deployment-fsId=190604,"Cc Beziers 2, 4 Av. de la Voie Domitienne, 34500 Béziers",Inpost14037,14/2/2026,https://admin.bloq.it/en/bloq-admin/list/68d695fca1187b78996f4f88,,Work order,,190604,Work order,https://bloqit.freshservice.com/a/tickets/190604,https://bloqit.dronahq.io/livesupport/Comments/87417,,Work Order - Maintenance,Work order,,,,,,,3.24185250,43.34540580,,,,,87417,On Hold (Bloqit),68d695fca1187b78996f4f88,Centre commercial Auchan 34500 Béziers - APM Instal.,https://airtable.com/appWcMf1J5mqv3SLM/pagtg8HM1yjEbPv0i/?home=pagbRJ9eTa9qcKvoP,Mondial Relay,34500,Béziers,"Reporting Category: 
+Other
+--------------
+Problem Description: 
+Bloq unreachable
+--------------
+Special Instructions: 
+Summary of The issue: 
+- Bloq is unreachable. 
+
+Step for FS:
+1 - Check that the batteries are charged and correctly inserted. Replace them if necessary.
+2 - Check network signal on site. 
+3 - If none of the above procedures resolves the issue, replace the Modem, CPU or the entire Mallow Kit.
+
+Spares:
+(x2) Next Battery
+(x1) Mallow kit (Mallow Adapter + Carrier Board + SOM)
+
+
+Required spares :
+Optional spares: 
+  
+--------------
+
+Additional Instructions: 
+
+--------------
+Client Description: 
+Description: Full Address: Cc Beziers 2, 4 Av. de la Voie Domitienne, 34500 Béziers  Please include spare parts in the child ticket:  Store Name: Centre commercial Auchan 34500 Béziers - APM Instal. ASSET Fields: | - Bloqit Name: Inpost14037 - Bloqit-ID: 68d695fca1187b78996f4f88 - Version:  BO Link: https://admin.bloq.it/en/bloq-admin/list/68d695fca1187b78996f4f88  Special Instructions: Cannot connect to the locker; cannot ping the locker  Notification Name: Connection Issue
+
+FreshService Ticket ID: 190604
+--------------",,06 63 18 50 59,,France
