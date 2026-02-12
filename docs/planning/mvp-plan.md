@@ -7,12 +7,12 @@
 ## Prerequisites
 
 ### PREREQ-001: Supabase Setup ⚡ CRITICAL - DO TODAY
-- [ ] Supabase project created at supabase.com
-- [ ] Project URL obtained (Settings → API)
-- [ ] Anon/public key obtained (Settings → API)
-- [ ] Service role key obtained (Settings → API)
-- [ ] Email auth enabled (Authentication → Providers)
-- [ ] Database ready (automatic with project creation)
+- [x] Supabase project created at supabase.com
+- [x] Project URL obtained (Settings → API)
+- [x] Anon/public key obtained (Settings → API)
+- [x] Service role key obtained (Settings → API)
+- [x] Email auth enabled (Authentication → Providers)
+- [x] Database ready (automatic with project creation)
 
 ### PREREQ-002: Airtable API Access ⚡ CRITICAL - DO TODAY
 - [ ] API key obtained
