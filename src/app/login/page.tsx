@@ -20,7 +20,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">
-            Zite Reports
+            Bloq.it Reports
           </CardTitle>
           <CardDescription className="text-center">
             Sign in to access your work orders

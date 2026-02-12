@@ -1,5 +1,5 @@
 # CLAUDE.md - AI Development Guide
-# Emergency Reporting System for Zite Technicians
+# Emergency Reporting System for Bloq.it Technicians
 
 **Last Updated:** 2026-02-12
 **Deadline:** Monday, February 16, 2026 (4 days)
