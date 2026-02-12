@@ -2,12 +2,9 @@
  * Test Airtable Integration
  *
  * Verifies that we can connect to Airtable and fetch work orders
+ *
+ * Environment variables are loaded via dotenv-cli (see package.json script)
  */
-
-// Load env from .env.local FIRST (before importing airtable module)
-import { config } from 'dotenv';
-import { resolve } from 'path';
-config({ path: resolve(__dirname, '../.env.local') });
 
 import {
   fetchWorkOrdersForTechnician,
