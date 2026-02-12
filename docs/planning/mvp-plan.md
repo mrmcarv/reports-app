@@ -15,15 +15,15 @@
 - [x] Database ready (automatic with project creation)
 
 ### PREREQ-002: Airtable API Access ⚡ CRITICAL - DO TODAY
-- [ ] API key obtained
-- [ ] **DeBloq Base ID** obtained (existing base)
-- [ ] **NEW: Reports Base created** (new base for full data)
-- [ ] Reports Base ID obtained
+- [x] API key obtained
+- [x] **DeBloq Base ID** obtained (existing base)
+- [x] **NEW: Reports Base created** (new base for full data)
+- [x] Reports Base ID obtained
 - [ ] Work Orders table (DeBloq) field mappings documented
 - [ ] Technicians table (DeBloq) structure documented
-- [ ] Form Submissions table (Reports) created with fields
-- [ ] Battery Swaps table (Reports) created with fields
-- [ ] Parts Used table (Reports) created with fields
+- [x] Form Submissions table (Reports) created with fields
+- [x] Battery Swaps table (Reports) created with fields
+- [x] Parts Used table (Reports) created with fields
 
 ### PREREQ-003: n8n Webhook Access
 - [ ] n8n webhook URL obtained
