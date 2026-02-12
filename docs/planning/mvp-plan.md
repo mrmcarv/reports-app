@@ -51,16 +51,16 @@
 
 ### Project Setup
 
-- [ ] **TASK-001:** Initialize Next.js 15 project with TypeScript
-- [ ] **TASK-002:** Install core dependencies:
+- [x] **TASK-001:** Initialize Next.js 15 project with TypeScript
+- [x] **TASK-002:** Install core dependencies:
   - Auth & DB: @supabase/supabase-js, @supabase/ssr
   - ORM: drizzle-orm, drizzle-kit, postgres (for PostgreSQL)
   - AWS (Day 2): @aws-sdk/client-s3, @aws-sdk/s3-request-presigner
   - Forms: react-hook-form, zod
   - QR: @zxing/browser
   - UI: @shadcn/ui components
-- [ ] **TASK-003:** Set up environment variables (.env.local, .env.example)
-- [ ] **TASK-004:** Configure TypeScript paths and imports
+- [x] **TASK-003:** Set up environment variables (.env.local, .env.example)
+- [x] **TASK-004:** Configure TypeScript paths and imports
 
 ### Supabase Setup
 

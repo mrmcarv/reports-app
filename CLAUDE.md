@@ -564,6 +564,35 @@ TaskCreate({
 })
 ```
 
+**CRITICAL: Update mvp-plan.md for each completed task:**
+1. Mark task checkbox as `[x]` in `/docs/planning/mvp-plan.md`
+2. Create a git commit for each completed task
+3. Commit message format:
+   ```
+   feat: complete TASK-XXX - brief description
+
+   - Task details
+   - What was implemented
+
+   Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+   ```
+
+**Example workflow:**
+```bash
+# 1. Complete task in code
+# 2. Update mvp-plan.md (mark [x])
+# 3. Commit everything
+git add .
+git commit -m "feat: complete TASK-001 to TASK-004 - project setup
+
+- Initialized Next.js 15 with TypeScript
+- Installed all core dependencies (Supabase, Drizzle, forms, QR, UI)
+- Configured environment variables
+- Set up TypeScript path aliases
+
+Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+```
+
 ### Daily Check-in Format
 
 **End of each session, report:**
