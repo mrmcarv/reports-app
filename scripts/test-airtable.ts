@@ -4,16 +4,16 @@
  * Verifies that we can connect to Airtable and fetch work orders
  */
 
+// Load env from .env.local FIRST (before importing airtable module)
+import { config } from 'dotenv';
+import { resolve } from 'path';
+config({ path: resolve(__dirname, '../.env.local') });
+
 import {
   fetchWorkOrdersForTechnician,
   fetchWorkOrderById,
   groupWorkOrdersByDate,
 } from '../src/lib/airtable';
-
-// Load env from .env.local
-import { config } from 'dotenv';
-import { resolve } from 'path';
-config({ path: resolve(__dirname, '../.env.local') });
 
 async function testAirtable() {
   console.log('🔍 Testing Airtable integration...\n');
