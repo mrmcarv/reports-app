@@ -67,7 +67,7 @@
 - [x] **TASK-005:** Create Supabase client utilities (lib/supabase/client.ts, server.ts)
 - [x] **TASK-006:** Configure Supabase Auth middleware for protected routes
 - [x] **TASK-007:** Create login page (app/login/page.tsx) with email/password
-- [ ] **TASK-008:** Test authentication flow (login/logout/session)
+- [x] **TASK-008:** Test authentication flow (login/logout/session)
 
 ### Database Schema & Migrations
 
