@@ -1,14 +1,12 @@
 /**
- * Work Order Card Component
+ * Work Order Card Component (Redesigned)
  *
- * Displays a single work order with key information:
- * - Work Order ID
- * - Work Type (with icon and color coding)
- * - Client and Location
- * - Planned Date
- * - Initial Issue/Description
- *
- * Clicking the card navigates to the work order detail page
+ * Modern card design with:
+ * - Colored header with work type icon and WO ID
+ * - Time and date display
+ * - Client and location info with icons
+ * - Status badge
+ * - Primary "Open Job" action button
  */
 
 'use client';
@@ -21,110 +19,125 @@ interface WorkOrderCardProps {
 }
 
 /**
- * Get work type display info (icon, label, color)
+ * Get work type display info (icon, label, header color)
  */
 function getWorkTypeInfo(workType: string) {
   switch (workType) {
     case 'battery_swap':
       return {
         icon: '🔋',
-        label: 'Battery Swap',
-        color: 'bg-blue-100 text-blue-800',
+        label: 'BATTERY SWAP',
+        headerColor: 'bg-blue-600',
       };
     case 'maintenance':
       return {
         icon: '🔧',
-        label: 'Maintenance',
-        color: 'bg-green-100 text-green-800',
+        label: 'MAINTENANCE',
+        headerColor: 'bg-green-600',
       };
     case 'wind_audit':
       return {
         icon: '🌬️',
-        label: 'Wind Audit',
-        color: 'bg-purple-100 text-purple-800',
+        label: 'WIND AUDIT',
+        headerColor: 'bg-purple-600',
       };
     case 'survey':
       return {
         icon: '📋',
-        label: 'Survey',
-        color: 'bg-orange-100 text-orange-800',
+        label: 'SURVEY',
+        headerColor: 'bg-slate-600',
       };
     default:
       return {
         icon: '📄',
-        label: workType,
-        color: 'bg-gray-100 text-gray-800',
+        label: workType.toUpperCase(),
+        headerColor: 'bg-gray-600',
       };
   }
 }
 
 /**
- * Format date for display
+ * Format time from date string (e.g., "02:00 PM")
+ */
+function formatTime(dateString?: string): string {
+  if (!dateString) return '--:--';
+
+  try {
+    const date = new Date(dateString);
+    return date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  } catch {
+    return '--:--';
+  }
+}
+
+/**
+ * Format date (e.g., "Feb 13, 2026")
  */
 function formatDate(dateString?: string): string {
   if (!dateString) return 'No date';
 
   try {
     const date = new Date(dateString);
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-
-    // Check if today
-    if (date.toDateString() === today.toDateString()) {
-      return 'Today';
-    }
-
-    // Check if tomorrow
-    if (date.toDateString() === tomorrow.toDateString()) {
-      return 'Tomorrow';
-    }
-
-    // Otherwise show formatted date
     return date.toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric',
+      year: 'numeric',
     });
   } catch {
-    return dateString;
+    return 'No date';
   }
+}
+
+/**
+ * Get status badge info (color and label)
+ */
+function getStatusInfo(step?: string, status?: string) {
+  // Use step or status for display
+  const label = step || status || 'Unknown';
+
+  // Color based on status/step
+  if (label.toLowerCase().includes('scheduled')) {
+    return { color: 'bg-yellow-100 text-yellow-800', dot: 'bg-yellow-500' };
+  } else if (label.toLowerCase().includes('progress')) {
+    return { color: 'bg-blue-100 text-blue-800', dot: 'bg-blue-500' };
+  } else if (label.toLowerCase().includes('complete')) {
+    return { color: 'bg-green-100 text-green-800', dot: 'bg-green-500' };
+  }
+
+  return { color: 'bg-gray-100 text-gray-800', dot: 'bg-gray-500' };
 }
 
 export function WorkOrderCard({ workOrder }: WorkOrderCardProps) {
   const workTypeInfo = getWorkTypeInfo(workOrder.workType);
-  const formattedDate = formatDate(workOrder.plannedDate);
+  const time = formatTime(workOrder.plannedDate);
+  const date = formatDate(workOrder.plannedDate);
+  const statusInfo = getStatusInfo(workOrder.step, workOrder.status);
 
   return (
-    <Link
-      href={`/work-order/${workOrder.workOrderId}`}
-      className="block bg-white rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all"
-    >
-      <div className="p-4">
-        {/* Header: WO ID and Work Type */}
-        <div className="flex items-start justify-between mb-3">
-          <div>
-            <h3 className="font-semibold text-gray-900 text-lg">
-              {workOrder.workOrderId}
-            </h3>
-            {workOrder.client && (
-              <p className="text-sm text-gray-600 mt-0.5">
-                {workOrder.client}
-              </p>
-            )}
-          </div>
-          <span
-            className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${workTypeInfo.color}`}
-          >
-            <span className="mr-1">{workTypeInfo.icon}</span>
+    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
+      {/* Header: Work Type + WO ID */}
+      <div className={`${workTypeInfo.headerColor} px-4 py-3 flex items-center gap-3`}>
+        <span className="text-3xl">{workTypeInfo.icon}</span>
+        <div className="flex-1">
+          <div className="text-white text-xs font-medium opacity-90">
             {workTypeInfo.label}
-          </span>
+          </div>
+          <div className="text-white text-xl font-bold">
+            #{workOrder.workOrderId}
+          </div>
         </div>
+      </div>
 
-        {/* Location */}
-        {workOrder.pointCode && (
-          <div className="flex items-center text-sm text-gray-600 mb-2">
+      {/* Content */}
+      <div className="p-4 space-y-3">
+        {/* Time and Date */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 text-gray-900">
             <svg
-              className="w-4 h-4 mr-1.5 text-gray-400"
+              className="w-5 h-5 text-red-500"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -133,53 +146,74 @@ export function WorkOrderCard({ workOrder }: WorkOrderCardProps) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
               />
+            </svg>
+            <span className="font-semibold text-lg">{time}</span>
+          </div>
+          <div className="text-sm text-gray-500">
+            {date}
+          </div>
+        </div>
+
+        {/* Client */}
+        {workOrder.client && (
+          <div className="flex items-center gap-2 text-gray-700">
+            <svg
+              className="w-4 h-4 text-gray-400 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
               />
             </svg>
-            <span className="truncate">{workOrder.pointCode}</span>
+            <span className="text-sm font-medium">{workOrder.client}</span>
           </div>
         )}
 
-        {/* Planned Date */}
-        <div className="flex items-center text-sm text-gray-600 mb-3">
-          <svg
-            className="w-4 h-4 mr-1.5 text-gray-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          <span>{formattedDate}</span>
+        {/* Location */}
+        {workOrder.pointCode && (
+          <div className="flex items-center gap-2 text-gray-700">
+            <svg
+              className="w-4 h-4 text-gray-400 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              />
+            </svg>
+            <span className="text-sm">{workOrder.pointCode}</span>
+          </div>
+        )}
+
+        {/* Status Badge */}
+        <div className="flex items-center gap-2">
+          <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${statusInfo.color}`}>
+            <span className={`w-2 h-2 rounded-full ${statusInfo.dot}`}></span>
+            {workOrder.step || workOrder.status}
+          </span>
         </div>
 
-        {/* Initial Issue */}
-        {workOrder.initialIssue && (
-          <p className="text-sm text-gray-700 line-clamp-2">
-            {workOrder.initialIssue}
-          </p>
-        )}
-
-        {/* Locker Version (if available) */}
-        {workOrder.lockerVersion && (
-          <div className="mt-3 pt-3 border-t border-gray-100">
-            <span className="text-xs text-gray-500">
-              Locker: {workOrder.lockerVersion}
-            </span>
-          </div>
-        )}
+        {/* Action Button */}
+        <Link
+          href={`/work-order/${workOrder.workOrderId}`}
+          className="block w-full mt-4"
+        >
+          <button className="w-full px-4 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-colors">
+            Open Job
+          </button>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
