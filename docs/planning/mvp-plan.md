@@ -222,15 +222,15 @@
 
 ### Work Order Completion
 
-- [ ] **TASK-115:** Create complete API route (POST /api/work-orders/[id]/complete)
-- [ ] **TASK-116:** Mark work order as completed in Supabase
-- [ ] **TASK-117:** Prepare n8n payload with localId for form submissions
-- [ ] **TASK-118:** Call n8n webhook (target: Airtable Reports base)
-- [ ] **TASK-119:** Handle n8n webhook response (mark syncedToAirtable on success)
-- [ ] **TASK-120:** Handle sync errors gracefully (keep syncedToAirtable=false)
-- [ ] **TASK-121:** Show success/error messages to user
-- [ ] **TASK-122:** Add manual retry button on failure
-- [ ] **TASK-123:** Redirect to dashboard on success
+- [x] **TASK-115:** Create complete API route (POST /api/work-orders/[id]/complete)
+- [x] **TASK-116:** Mark work order as completed in Supabase
+- [x] **TASK-117:** Prepare n8n payload with localId for form submissions
+- [x] **TASK-118:** Call n8n webhook (target: Airtable Reports base)
+- [x] **TASK-119:** Handle n8n webhook response (mark syncedToAirtable on success)
+- [x] **TASK-120:** Handle sync errors gracefully (keep syncedToAirtable=false)
+- [x] **TASK-121:** Show success/error messages to user
+- [x] **TASK-122:** Add manual retry button on failure
+- [x] **TASK-123:** Redirect to dashboard on success
 - [ ] **TASK-124:** Test complete flow end-to-end with n8n
 
 ### UI Components (Minimal for MVP)
