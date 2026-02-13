@@ -1,85 +1,92 @@
 /**
- * Dashboard Page (Testing)
+ * Dashboard Page
  *
- * Simple dashboard for testing authentication.
- * This will be replaced with the full work orders dashboard later.
+ * Displays assigned work orders for the logged-in technician.
+ * Groups work orders by date (Today, Upcoming, Overdue).
+ *
+ * Data flow:
+ * 1. Fetch work orders from Airtable (via API route)
+ * 2. Filter by logged-in technician's email
+ * 3. Sort by planned date
+ * 4. Display in WorkOrderList component
  */
 
-import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
-import { LogoutButton } from '@/components/auth/LogoutButton';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { createClient } from '@/lib/supabase/server';
 
 export default async function DashboardPage() {
+  // Check authentication
   const supabase = await createClient();
-
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // This shouldn't happen due to middleware, but just in case
   if (!user) {
     redirect('/login');
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-4xl mx-auto space-y-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Dashboard</h1>
-          <LogoutButton />
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Bloq.it Reports
+              </h1>
+              <p className="text-sm text-gray-600 mt-1">{user.email}</p>
+            </div>
+            <form action="/auth/signout" method="post">
+              <button
+                type="submit"
+                className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition"
+              >
+                Sign out
+              </button>
+            </form>
+          </div>
+        </div>
+      </header>
+
+      {/* Main content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold text-gray-900">
+            Assigned Work Orders
+          </h2>
+          <p className="text-sm text-gray-600 mt-1">
+            Work orders scheduled for completion
+          </p>
         </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Authentication Test</CardTitle>
-            <CardDescription>
-              You are successfully logged in!
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <p className="text-sm font-medium text-gray-500">User ID</p>
-              <p className="font-mono text-sm">{user.id}</p>
+        {/* Work order list placeholder */}
+        <div className="bg-white rounded-lg shadow p-6">
+          <div className="text-center py-12">
+            <div className="text-gray-400 mb-4">
+              <svg
+                className="mx-auto h-12 w-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
             </div>
-            <div>
-              <p className="text-sm font-medium text-gray-500">Email</p>
-              <p className="font-mono text-sm">{user.email}</p>
-            </div>
-            <div>
-              <p className="text-sm font-medium text-gray-500">
-                Last Sign In
-              </p>
-              <p className="font-mono text-sm">
-                {user.last_sign_in_at
-                  ? new Date(user.last_sign_in_at).toLocaleString()
-                  : 'N/A'}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Next Steps</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc list-inside space-y-2 text-sm">
-              <li>Authentication is working! ✅</li>
-              <li>Protected routes are secured by middleware ✅</li>
-              <li>Next: Build database schema and migrations</li>
-              <li>Then: Build work orders dashboard</li>
-              <li>Finally: Build form components</li>
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
+            <h3 className="text-lg font-medium text-gray-900 mb-1">
+              Work Orders Loading...
+            </h3>
+            <p className="text-sm text-gray-500">
+              Fetching your assigned work orders from Airtable
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
