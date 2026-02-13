@@ -136,14 +136,14 @@
 
 ### File Upload Component
 
-- [ ] **TASK-053:** Create FileUpload component (components/FileUpload.tsx)
-- [ ] **TASK-054:** Implement multi-file selection
-- [ ] **TASK-055:** Implement upload via storage utility (Supabase day 1, S3 day 2)
-- [ ] **TASK-056:** Add preview thumbnails
-- [ ] **TASK-057:** Add progress indicators
-- [ ] **TASK-058:** Add remove file functionality
-- [ ] **TASK-059:** Add file validation (type, size limits)
-- [ ] **TASK-060:** Test on mobile devices
+- [x] **TASK-053:** Create FileUpload component (components/FileUpload.tsx)
+- [x] **TASK-054:** Implement multi-file selection
+- [x] **TASK-055:** Implement upload via storage utility (Supabase day 1, S3 day 2)
+- [x] **TASK-056:** Add preview thumbnails
+- [x] **TASK-057:** Add progress indicators
+- [x] **TASK-058:** Add remove file functionality
+- [x] **TASK-059:** Add file validation (type, size limits)
+- [x] **TASK-060:** Test on mobile devices
 
 ### Battery Swap Form (Standalone - No Multi-Form for MVP)
 
