@@ -70,28 +70,36 @@ function generateUniqueFilename(originalName: string): string {
 /**
  * Upload file to storage (Supabase Storage - Day 1)
  *
+ * Files are stored in: work-orders/{workOrderId}/{filename}
+ * Uses signed URLs (1 hour expiry) for private bucket access
+ *
  * @param file - File to upload
- * @param folder - Optional folder path (e.g., "work-orders/12345")
- * @returns Upload result with public URL
+ * @param workOrderId - Work order ID (required for folder structure)
+ * @returns Upload result with signed URL
  * @throws Error if upload fails
  */
 export async function uploadFile(
   file: File,
-  folder?: string
+  workOrderId: string
 ): Promise<UploadResult> {
   // Validate file
   validateFile(file);
+
+  if (!workOrderId) {
+    throw new Error('workOrderId is required for file upload');
+  }
 
   const supabase = createClient();
 
   // Generate unique filename
   const filename = generateUniqueFilename(file.name);
-  const path = folder ? `${folder}/${filename}` : filename;
+  // Store in work-orders/{workOrderId}/ structure (required by RLS policy)
+  const path = `work-orders/${workOrderId}/${filename}`;
 
   console.log('📤 Uploading file:', path);
 
   try {
-    // Upload to Supabase Storage
+    // Upload to Supabase Storage (private bucket)
     const { data, error } = await supabase.storage
       .from('work-order-photos')
       .upload(path, file, {
@@ -104,15 +112,20 @@ export async function uploadFile(
       throw new Error(`Upload failed: ${error.message}`);
     }
 
-    // Get public URL
-    const {
-      data: { publicUrl },
-    } = supabase.storage.from('work-order-photos').getPublicUrl(path);
+    // Get signed URL (expires in 1 hour)
+    const { data: signedUrlData, error: signedUrlError } = await supabase.storage
+      .from('work-order-photos')
+      .createSignedUrl(path, 3600); // 1 hour expiry
 
-    console.log('✅ Upload successful:', publicUrl);
+    if (signedUrlError || !signedUrlData) {
+      console.error('❌ Failed to create signed URL:', signedUrlError);
+      throw new Error('Failed to create signed URL');
+    }
+
+    console.log('✅ Upload successful:', signedUrlData.signedUrl);
 
     return {
-      url: publicUrl,
+      url: signedUrlData.signedUrl,
       path: data.path,
     };
   } catch (error) {
@@ -125,16 +138,16 @@ export async function uploadFile(
  * Upload multiple files in parallel
  *
  * @param files - Array of files to upload
- * @param folder - Optional folder path
+ * @param workOrderId - Work order ID (required)
  * @returns Array of upload results
  */
 export async function uploadFiles(
   files: File[],
-  folder?: string
+  workOrderId: string
 ): Promise<UploadResult[]> {
   console.log(`📤 Uploading ${files.length} files...`);
 
-  const uploadPromises = files.map((file) => uploadFile(file, folder));
+  const uploadPromises = files.map((file) => uploadFile(file, workOrderId));
   const results = await Promise.all(uploadPromises);
 
   console.log(`✅ Uploaded ${results.length} files`);
@@ -172,19 +185,27 @@ export async function deleteFile(path: string): Promise<boolean> {
 }
 
 /**
- * Get public URL for a file
+ * Get signed URL for a file (private bucket)
  *
  * @param path - Storage path
- * @returns Public URL
+ * @param expiresIn - Expiration time in seconds (default: 1 hour)
+ * @returns Signed URL
  */
-export function getPublicUrl(path: string): string {
+export async function getSignedUrl(
+  path: string,
+  expiresIn = 3600
+): Promise<string> {
   const supabase = createClient();
 
-  const {
-    data: { publicUrl },
-  } = supabase.storage.from('work-order-photos').getPublicUrl(path);
+  const { data, error } = await supabase.storage
+    .from('work-order-photos')
+    .createSignedUrl(path, expiresIn);
 
-  return publicUrl;
+  if (error || !data) {
+    throw new Error(`Failed to create signed URL: ${error?.message}`);
+  }
+
+  return data.signedUrl;
 }
 
 // ============================================================================
