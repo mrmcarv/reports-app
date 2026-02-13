@@ -63,24 +63,36 @@ export async function POST(
       );
     }
 
-    if (workOrder.status === 'completed') {
-      return Response.json(
-        { error: 'Work order is already completed' },
-        { status: 400 }
-      );
+    // If already completed AND synced, return success immediately
+    if (workOrder.status === 'completed' && workOrder.syncedToAirtable) {
+      return Response.json({
+        success: true,
+        workOrderCompleted: true,
+        synced: true,
+        message: 'Work order already completed and synced',
+        alreadyDone: true,
+      });
     }
 
-    // 4. Mark work order as completed in Supabase
-    const [updatedWorkOrder] = await db
-      .update(workOrders)
-      .set({
-        status: 'completed',
-        completedAt: new Date(),
-      })
-      .where(eq(workOrders.id, workOrder.id))
-      .returning();
+    // 4. Mark work order as completed in Supabase (if not already)
+    let updatedWorkOrder = workOrder;
 
-    console.log(`✅ Marked work order ${workOrder.workOrderId} as completed`);
+    if (workOrder.status !== 'completed') {
+      [updatedWorkOrder] = await db
+        .update(workOrders)
+        .set({
+          status: 'completed',
+          completedAt: new Date(),
+        })
+        .where(eq(workOrders.id, workOrder.id))
+        .returning();
+
+      console.log(`✅ Marked work order ${workOrder.workOrderId} as completed`);
+    } else {
+      console.log(
+        `ℹ️ Work order ${workOrder.workOrderId} already completed, retrying sync...`
+      );
+    }
 
     // 5. Fetch all related data for n8n payload
     const forms = await db.query.formSubmissions.findMany({
