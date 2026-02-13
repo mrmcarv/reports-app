@@ -40,11 +40,7 @@ export function StartWorkButton({ workOrderId }: StartWorkButtonProps) {
 
       console.log('✅ Work order initialized:', data);
 
-      // Show success and refresh page to show updated state
-      alert(
-        `✅ Work order ${workOrderId} initialized successfully!\n\nYou can now complete forms for this work order.`
-      );
-
+      // Refresh page to show updated state (form will appear)
       router.refresh();
     } catch (err) {
       const errorMessage =
