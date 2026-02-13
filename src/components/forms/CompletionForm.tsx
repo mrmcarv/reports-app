@@ -66,7 +66,10 @@ export function CompletionForm({
         console.log('✅ Work order completed successfully:', result);
         toast.success('Work Order Completed!', {
           description: 'All data synced to Airtable successfully',
-          duration: Infinity,
+          action: {
+            label: 'OK',
+            onClick: () => {},
+          },
         });
         setState('success');
 

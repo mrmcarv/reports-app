@@ -107,7 +107,10 @@ export function PartsTrackingForm({
       console.log('Parts saved successfully:', result);
       toast.success('Parts Saved', {
         description: `${partsData.length} part(s) recorded successfully`,
-        duration: Infinity,
+        action: {
+          label: 'OK',
+          onClick: () => {},
+        },
       });
 
       // Navigate to completion

@@ -43,7 +43,10 @@ export function BatterySwapFormWrapper({
 
     toast.success('Battery Swap Completed', {
       description: `${result.batterySwaps.length} battery swap(s) saved successfully`,
-      duration: Infinity,
+      action: {
+        label: 'OK',
+        onClick: () => {},
+      },
     });
 
     // Refresh to show completed state
