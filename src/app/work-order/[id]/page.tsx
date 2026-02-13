@@ -144,6 +144,15 @@ export default async function WorkOrderPage({ params }: PageProps) {
   const isInitialized = !!supabaseWorkOrder;
   const isCompleted = supabaseWorkOrder?.status === 'completed';
 
+  // Debug logging
+  console.log('Work Order Debug:', {
+    workOrderId: id,
+    workType: workOrder.workType,
+    isInitialized,
+    isCompleted,
+    supabaseWorkOrderId: supabaseWorkOrder?.id,
+  });
+
   const workTypeInfo = getWorkTypeInfo(workOrder.workType);
   const formattedDate = formatDate(workOrder.plannedDate);
 
