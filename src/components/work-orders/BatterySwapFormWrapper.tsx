@@ -9,6 +9,7 @@
 
 import { BatterySwapForm } from '@/components/forms/BatterySwapForm';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 interface BatterySwapFormWrapperProps {
   workOrderId: string;
@@ -40,9 +41,9 @@ export function BatterySwapFormWrapper({
 
     const result = await response.json();
 
-    alert(
-      `✅ ${result.batterySwaps.length} battery swap(s) saved successfully!\nWork order completed.`
-    );
+    toast.success('Battery Swap Completed', {
+      description: `${result.batterySwaps.length} battery swap(s) saved successfully`,
+    });
 
     // Refresh to show completed state
     router.refresh();

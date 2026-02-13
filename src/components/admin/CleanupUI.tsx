@@ -9,6 +9,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 interface CleanupUIProps {
   userEmail: string;
@@ -62,6 +63,9 @@ export function CleanupUI({ userEmail }: CleanupUIProps) {
       }
 
       console.log('✅ Cleanup successful:', data);
+      toast.success('Database Cleaned', {
+        description: `Deleted ${data.deleted.workOrders} work orders and related data`,
+      });
       setResult(data);
 
       // Refresh counts
@@ -70,6 +74,9 @@ export function CleanupUI({ userEmail }: CleanupUIProps) {
       const errorMessage =
         err instanceof Error ? err.message : 'Unknown error';
       console.error('❌ Cleanup failed:', errorMessage);
+      toast.error('Cleanup Failed', {
+        description: errorMessage,
+      });
       setError(errorMessage);
     } finally {
       setIsLoading(false);

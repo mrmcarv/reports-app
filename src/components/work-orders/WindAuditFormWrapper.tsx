@@ -9,6 +9,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { toast } from 'sonner';
 import { WindAuditForm } from '@/components/forms/WindAuditForm';
 
 interface WindAuditFormWrapperProps {
@@ -54,6 +55,9 @@ export function WindAuditFormWrapper({
       }
 
       console.log('Wind audit form submitted successfully:', result);
+      toast.success('Wind Audit Saved', {
+        description: 'Form submitted successfully',
+      });
 
       // If onSuccess callback provided (multi-form flow), use it
       if (onSuccess) {

@@ -9,6 +9,7 @@
 
 import { MaintenanceForm } from '@/components/forms/MaintenanceForm';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 interface MaintenanceFormWrapperProps {
   workOrderId: string;
@@ -46,6 +47,9 @@ export function MaintenanceFormWrapper({
     const result = await response.json();
 
     console.log('✅ Maintenance form saved successfully:', result);
+    toast.success('Maintenance Form Saved', {
+      description: 'Form submitted successfully',
+    });
 
     // If onSuccess callback provided (multi-form flow), use it
     if (onSuccess) {

@@ -9,6 +9,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import { FormPartsSection } from '@/components/parts/FormPartsSection';
 
 interface Part {
@@ -104,6 +105,9 @@ export function PartsTrackingForm({
       }
 
       console.log('Parts saved successfully:', result);
+      toast.success('Parts Saved', {
+        description: `${partsData.length} part(s) recorded successfully`,
+      });
 
       // Navigate to completion
       router.push(`/work-order/${workOrderId}/complete`);

@@ -9,6 +9,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 interface CompletionFormProps {
   workOrderId: string; // Airtable WO ID
@@ -63,6 +64,9 @@ export function CompletionForm({
       if (response.ok) {
         // Full success
         console.log('✅ Work order completed successfully:', result);
+        toast.success('Work Order Completed!', {
+          description: 'All data synced to Airtable successfully',
+        });
         setState('success');
 
         // Redirect to dashboard after 2 seconds
@@ -72,6 +76,9 @@ export function CompletionForm({
       } else if (response.status === 207) {
         // Partial success: completed but not synced
         console.warn('⚠️ Partial success:', result);
+        toast.warning('Partial Success', {
+          description: 'Work order completed but sync failed. You can retry.',
+        });
         setState('partial_success');
         setError(result.message || 'Failed to sync to Airtable');
         setCanRetry(result.canRetry || false);
@@ -83,6 +90,9 @@ export function CompletionForm({
       const errorMessage =
         err instanceof Error ? err.message : 'Unknown error';
       console.error('❌ Completion failed:', errorMessage);
+      toast.error('Completion Failed', {
+        description: errorMessage,
+      });
       setState('error');
       setError(errorMessage);
       setCanRetry(true);
