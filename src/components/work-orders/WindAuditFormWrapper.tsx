@@ -57,6 +57,7 @@ export function WindAuditFormWrapper({
       console.log('Wind audit form submitted successfully:', result);
       toast.success('Wind Audit Saved', {
         description: 'Form submitted successfully',
+        duration: Infinity,
       });
 
       // If onSuccess callback provided (multi-form flow), use it

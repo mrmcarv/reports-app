@@ -49,6 +49,7 @@ export function MaintenanceFormWrapper({
     console.log('✅ Maintenance form saved successfully:', result);
     toast.success('Maintenance Form Saved', {
       description: 'Form submitted successfully',
+      duration: Infinity,
     });
 
     // If onSuccess callback provided (multi-form flow), use it
