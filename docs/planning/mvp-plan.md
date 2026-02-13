@@ -104,10 +104,10 @@
 
 ### File Storage (Day 1: Supabase, Day 2: S3)
 
-- [ ] **TASK-030:** Create storage utility module (lib/storage.ts)
-- [ ] **TASK-031:** Implement Supabase Storage upload (Day 1 - temporary)
-- [ ] **TASK-032:** Create storage bucket in Supabase (work-order-photos)
-- [ ] **TASK-033:** Configure storage policies (public read, authenticated write)
+- [x] **TASK-030:** Create storage utility module (lib/storage.ts)
+- [x] **TASK-031:** Implement Supabase Storage upload (Day 1 - temporary)
+- [x] **TASK-032:** Create storage bucket in Supabase (work-order-photos)
+- [x] **TASK-033:** Configure storage policies (private bucket, RLS by work order ownership)
 - [ ] **TASK-034:** Test Supabase Storage upload flow
 - [ ] **TASK-035:** (Day 2) Switch lib/storage.ts to use S3 with presigned URLs
 - [ ] **TASK-036:** (Day 2) Create API route for S3 presigned URLs
