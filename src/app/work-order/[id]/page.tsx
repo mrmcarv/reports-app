@@ -20,6 +20,10 @@ import {
 } from '@/lib/airtable';
 import { USE_MOCK_DATA, MOCK_WORK_ORDERS } from '@/lib/mockData';
 import { StartWorkButton } from '@/components/work-orders/StartWorkButton';
+import { db } from '@/lib/db';
+import { workOrders } from '@/lib/schema';
+import { eq, and } from 'drizzle-orm';
+import { BatterySwapFormWrapper } from '@/components/work-orders/BatterySwapFormWrapper';
 
 interface PageProps {
   params: Promise<{
@@ -121,12 +125,23 @@ export default async function WorkOrderPage({ params }: PageProps) {
     redirect('/login');
   }
 
-  // Fetch work order
+  // Fetch work order from Airtable/mock
   const workOrder = await getWorkOrder(id);
 
   if (!workOrder) {
     notFound();
   }
+
+  // Check if work order has been initialized in Supabase
+  const supabaseWorkOrder = await db.query.workOrders.findFirst({
+    where: and(
+      eq(workOrders.workOrderId, id),
+      eq(workOrders.technicianUserId, user.id)
+    ),
+  });
+
+  const isInitialized = !!supabaseWorkOrder;
+  const isCompleted = supabaseWorkOrder?.status === 'completed';
 
   const workTypeInfo = getWorkTypeInfo(workOrder.workType);
   const formattedDate = formatDate(workOrder.plannedDate);
@@ -238,21 +253,45 @@ export default async function WorkOrderPage({ params }: PageProps) {
           </dl>
         </div>
 
-        {/* Start Work Button */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Ready to Start?
-          </h3>
-          <p className="text-sm text-gray-600 mb-4">
-            Begin working on this work order. You'll be able to fill out forms,
-            upload photos, and track parts used.
-          </p>
-          <StartWorkButton workOrderId={workOrder.workOrderId} />
-          <p className="text-xs text-gray-500 mt-4">
-            This will initialize the work order in the system and allow you to
-            complete forms.
-          </p>
-        </div>
+        {/* Conditional: Start Button or Form */}
+        {!isInitialized ? (
+          /* Not yet started - show start button */
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Ready to Start?
+            </h3>
+            <p className="text-sm text-gray-600 mb-4">
+              Begin working on this work order. You'll be able to fill out
+              forms, upload photos, and track parts used.
+            </p>
+            <StartWorkButton workOrderId={workOrder.workOrderId} />
+            <p className="text-xs text-gray-500 mt-4">
+              This will initialize the work order in the system and allow you to
+              complete forms.
+            </p>
+          </div>
+        ) : isCompleted ? (
+          /* Already completed */
+          <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-green-900 mb-2">
+              ✅ Work Order Completed
+            </h3>
+            <p className="text-sm text-green-700">
+              This work order has been completed and submitted.
+            </p>
+          </div>
+        ) : (
+          /* In progress - show battery swap form */
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Complete Battery Swap
+            </h3>
+            <BatterySwapFormWrapper
+              workOrderId={workOrder.workOrderId}
+              supabaseWorkOrderId={supabaseWorkOrder!.id}
+            />
+          </div>
+        )}
       </main>
     </div>
   );
