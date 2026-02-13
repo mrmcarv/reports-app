@@ -26,9 +26,9 @@
 - [x] Parts Used table (Reports) created with fields
 
 ### PREREQ-003: n8n Webhook Access
-- [ ] n8n webhook URL obtained
-- [ ] Webhook secret generated
-- [ ] n8n workflow created (targeting Reports base)
+- [x] n8n webhook URL obtained
+- [x] Webhook secret generated
+- [x] n8n workflow created (targeting Reports base)
 - [ ] Webhook tested with sample data
 
 ### PREREQ-004: AWS S3 Setup (Tomorrow - Friday)

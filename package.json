@@ -11,7 +11,8 @@
     "db:migrate": "dotenv -e .env.local -- drizzle-kit migrate",
     "db:push": "dotenv -e .env.local -- drizzle-kit push",
     "db:studio": "dotenv -e .env.local -- drizzle-kit studio",
-    "test:airtable": "dotenv -e .env.local -- npx tsx scripts/test-airtable.ts"
+    "test:airtable": "dotenv -e .env.local -- npx tsx scripts/test-airtable.ts",
+    "test:n8n": "dotenv -e .env.local -- npx tsx scripts/test-n8n-webhook.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
