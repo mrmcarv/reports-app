@@ -19,6 +19,7 @@ import {
   AirtableWorkOrder,
 } from '@/lib/airtable';
 import { USE_MOCK_DATA, MOCK_WORK_ORDERS } from '@/lib/mockData';
+import { StartWorkButton } from '@/components/work-orders/StartWorkButton';
 
 interface PageProps {
   params: {
@@ -243,14 +244,10 @@ export default async function WorkOrderPage({ params }: PageProps) {
             Begin working on this work order. You'll be able to fill out forms,
             upload photos, and track parts used.
           </p>
-          <button
-            className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition"
-            disabled
-          >
-            Start Work Order
-          </button>
-          <p className="text-xs text-gray-500 mt-2">
-            (Form functionality coming next)
+          <StartWorkButton workOrderId={workOrder.workOrderId} />
+          <p className="text-xs text-gray-500 mt-4">
+            This will initialize the work order in the system and allow you to
+            complete forms.
           </p>
         </div>
       </main>
