@@ -13,11 +13,13 @@ import { useRouter } from 'next/navigation';
 interface MaintenanceFormWrapperProps {
   workOrderId: string;
   supabaseWorkOrderId: number;
+  onSuccess?: () => void; // Optional callback for multi-form flow
 }
 
 export function MaintenanceFormWrapper({
   workOrderId,
   supabaseWorkOrderId,
+  onSuccess,
 }: MaintenanceFormWrapperProps) {
   const router = useRouter();
 
@@ -43,12 +45,16 @@ export function MaintenanceFormWrapper({
 
     const result = await response.json();
 
-    alert('✅ Maintenance form saved successfully!');
+    console.log('✅ Maintenance form saved successfully:', result);
 
-    // Refresh to show updated state
-    router.refresh();
-    // Optionally redirect to dashboard
-    router.push('/dashboard');
+    // If onSuccess callback provided (multi-form flow), use it
+    if (onSuccess) {
+      onSuccess();
+    } else {
+      // Otherwise, redirect to dashboard (standalone flow)
+      router.refresh();
+      router.push('/dashboard');
+    }
   };
 
   return <MaintenanceForm workOrderId={workOrderId} onSubmit={handleSubmit} />;

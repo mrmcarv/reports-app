@@ -14,11 +14,13 @@ import { WindAuditForm } from '@/components/forms/WindAuditForm';
 interface WindAuditFormWrapperProps {
   workOrderId: string;
   supabaseWorkOrderId: number;
+  onSuccess?: () => void; // Optional callback for multi-form flow
 }
 
 export function WindAuditFormWrapper({
   workOrderId,
   supabaseWorkOrderId,
+  onSuccess,
 }: WindAuditFormWrapperProps) {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -53,9 +55,14 @@ export function WindAuditFormWrapper({
 
       console.log('Wind audit form submitted successfully:', result);
 
-      // Refresh and redirect to dashboard
-      router.refresh();
-      router.push('/dashboard');
+      // If onSuccess callback provided (multi-form flow), use it
+      if (onSuccess) {
+        onSuccess();
+      } else {
+        // Otherwise, redirect to dashboard (standalone flow)
+        router.refresh();
+        router.push('/dashboard');
+      }
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : 'Unknown error';

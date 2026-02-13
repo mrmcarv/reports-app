@@ -88,20 +88,13 @@ export async function POST(
 
     console.log(`✅ Saved ${formType} form submission:`, savedSubmission.id);
 
-    // 6. Update work order status to completed
-    await db
-      .update(workOrders)
-      .set({
-        status: 'completed',
-        completedAt: new Date(),
-      })
-      .where(eq(workOrders.id, workOrder.id));
-
-    console.log(`✅ Marked work order ${workOrder.workOrderId} as completed`);
+    // Note: Work order is NOT auto-completed here
+    // User must explicitly complete via completion flow (multi-form support)
 
     return Response.json({
       success: true,
       submissionId: savedSubmission.id,
+      localId: savedSubmission.id, // For n8n mapping to Airtable
       message: 'Form submitted successfully',
     });
   } catch (error) {

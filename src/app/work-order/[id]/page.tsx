@@ -26,6 +26,8 @@ import { eq, and } from 'drizzle-orm';
 import { BatterySwapFormWrapper } from '@/components/work-orders/BatterySwapFormWrapper';
 import { MaintenanceFormWrapper } from '@/components/work-orders/MaintenanceFormWrapper';
 import { WindAuditFormWrapper } from '@/components/work-orders/WindAuditFormWrapper';
+import { WorkOrderFormsManager } from '@/components/work-orders/WorkOrderFormsManager';
+import { getCompletedForms, getAvailableFormTypes } from '@/lib/workOrderHelpers';
 
 interface PageProps {
   params: Promise<{
@@ -145,6 +147,23 @@ export default async function WorkOrderPage({ params }: PageProps) {
   const isInitialized = !!supabaseWorkOrder;
   const isCompleted = supabaseWorkOrder?.status === 'completed';
 
+  // Fetch completed forms and available form types for multi-form flow
+  let completedForms: any[] = [];
+  let availableFormTypes: any[] = [];
+
+  if (isInitialized && !isCompleted && supabaseWorkOrder) {
+    completedForms = await getCompletedForms(supabaseWorkOrder.id);
+    availableFormTypes = await getAvailableFormTypes(
+      supabaseWorkOrder.id,
+      workOrder.workType
+    );
+  }
+
+  // Check if this work type supports multi-form flow
+  const supportsMultiForm = ['maintenance', 'wind_audit', 'survey'].includes(
+    workOrder.workType
+  );
+
   // Debug logging
   console.log('Work Order Debug:', {
     workOrderId: id,
@@ -152,6 +171,9 @@ export default async function WorkOrderPage({ params }: PageProps) {
     isInitialized,
     isCompleted,
     supabaseWorkOrderId: supabaseWorkOrder?.id,
+    completedFormsCount: completedForms.length,
+    availableFormTypes,
+    supportsMultiForm,
   });
 
   const workTypeInfo = getWorkTypeInfo(workOrder.workType);
@@ -292,44 +314,31 @@ export default async function WorkOrderPage({ params }: PageProps) {
             </p>
           </div>
         ) : (
-          /* In progress - show appropriate form based on work type */
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              {workOrder.workType === 'battery_swap' && 'Complete Battery Swap'}
-              {workOrder.workType === 'maintenance' && 'Complete Maintenance'}
-              {workOrder.workType === 'wind_audit' && 'Complete Wind Audit'}
-              {workOrder.workType === 'survey' && 'Complete Survey'}
-            </h3>
-
+          /* In progress - show appropriate form or multi-form manager */
+          <>
+            {/* Battery Swap: Standalone only (no multi-form) */}
             {workOrder.workType === 'battery_swap' && (
-              <BatterySwapFormWrapper
-                workOrderId={workOrder.workOrderId}
-                supabaseWorkOrderId={supabaseWorkOrder!.id}
-              />
-            )}
-
-            {workOrder.workType === 'maintenance' && (
-              <MaintenanceFormWrapper
-                workOrderId={workOrder.workOrderId}
-                supabaseWorkOrderId={supabaseWorkOrder!.id}
-              />
-            )}
-
-            {workOrder.workType === 'wind_audit' && (
-              <WindAuditFormWrapper
-                workOrderId={workOrder.workOrderId}
-                supabaseWorkOrderId={supabaseWorkOrder!.id}
-              />
-            )}
-
-            {workOrder.workType === 'survey' && (
-              <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                <p className="text-sm text-yellow-800">
-                  Survey form coming soon...
-                </p>
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Complete Battery Swap
+                </h3>
+                <BatterySwapFormWrapper
+                  workOrderId={workOrder.workOrderId}
+                  supabaseWorkOrderId={supabaseWorkOrder!.id}
+                />
               </div>
             )}
-          </div>
+
+            {/* Maintenance & Wind Audit: Use multi-form manager */}
+            {supportsMultiForm && (
+              <WorkOrderFormsManager
+                workOrderId={workOrder.workOrderId}
+                supabaseWorkOrderId={supabaseWorkOrder!.id}
+                completedForms={completedForms}
+                availableFormTypes={availableFormTypes}
+              />
+            )}
+          </>
         )}
       </main>
     </div>
