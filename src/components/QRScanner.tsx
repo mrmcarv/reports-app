@@ -95,10 +95,14 @@ export function QRScanner({ onScan, onError, onClose }: QRScannerProps) {
   }, [onScan, onError]);
 
   const cleanup = () => {
-    if (readerRef.current) {
-      readerRef.current.reset();
-      readerRef.current = null;
+    // Stop video stream
+    if (videoRef.current && videoRef.current.srcObject) {
+      const stream = videoRef.current.srcObject as MediaStream;
+      stream.getTracks().forEach((track) => track.stop());
+      videoRef.current.srcObject = null;
     }
+
+    readerRef.current = null;
     setIsScanning(false);
   };
 
