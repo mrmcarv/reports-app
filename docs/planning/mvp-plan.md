@@ -199,10 +199,10 @@
 
 ### Multi-Form Flow (Maintenance + Wind Audit only)
 
-- [ ] **TASK-098:** Implement "Add Another Intervention" UI
-- [ ] **TASK-099:** Track completed forms in work order state
-- [ ] **TASK-100:** Show list of completed forms
-- [ ] **TASK-101:** Filter available form types based on config (maintenance repeatable, wind audit once)
+- [x] **TASK-098:** Implement "Add Another Intervention" UI
+- [x] **TASK-099:** Track completed forms in work order state
+- [x] **TASK-100:** Show list of completed forms
+- [x] **TASK-101:** Filter available form types based on config (maintenance repeatable, wind audit once)
 - [ ] **TASK-102:** Test adding multiple maintenance forms with different categories
 - [ ] **TASK-103:** Test mixing form types (maintenance + wind audit)
 
