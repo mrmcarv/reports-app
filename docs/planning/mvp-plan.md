@@ -19,8 +19,8 @@
 - [x] **DeBloq Base ID** obtained (existing base)
 - [x] **NEW: Reports Base created** (new base for full data)
 - [x] Reports Base ID obtained
-- [ ] Work Orders table (DeBloq) field mappings documented
-- [ ] Technicians table (DeBloq) structure documented
+- [x] Work Orders table (DeBloq) field mappings documented
+- [ ] Technicians table (DeBloq) structure documented (defer to v2)
 - [x] Form Submissions table (Reports) created with fields
 - [x] Battery Swaps table (Reports) created with fields
 - [x] Parts Used table (Reports) created with fields
@@ -29,7 +29,7 @@
 - [x] n8n webhook URL obtained
 - [x] Webhook secret generated
 - [x] n8n workflow created (targeting Reports base)
-- [ ] Webhook tested with sample data
+- [x] Webhook tested with sample data (connectivity verified, Airtable sync deferred)
 
 ### PREREQ-004: AWS S3 Setup (Tomorrow - Friday)
 - [ ] S3 bucket name confirmed (existing bucket)
@@ -97,10 +97,10 @@
 
 ### n8n Integration (Write via Webhook)
 
-- [ ] **TASK-026:** Create n8n webhook client (lib/n8n.ts)
-- [ ] **TASK-027:** Implement POST to n8n webhook with work order completion data
-- [ ] **TASK-028:** Handle n8n webhook response (success/failure)
-- [ ] **TASK-029:** Test n8n webhook integration with sample data
+- [x] **TASK-026:** Create n8n webhook client (lib/n8n.ts)
+- [x] **TASK-027:** Implement POST to n8n webhook with work order completion data
+- [x] **TASK-028:** Handle n8n webhook response (success/failure)
+- [x] **TASK-029:** Test n8n webhook integration with sample data
 
 ### File Storage (Day 1: Supabase, Day 2: S3)
 
