@@ -13,22 +13,27 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { WorkOrderList } from '@/components/work-orders/WorkOrderList';
+import {
+  fetchWorkOrdersForTechnician,
+  groupWorkOrdersByDate,
+} from '@/lib/airtable';
+import { USE_MOCK_DATA, getMockWorkOrders } from '@/lib/mockData';
 
-async function getWorkOrders() {
+async function getWorkOrders(technicianEmail: string) {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/work-orders`,
-      {
-        cache: 'no-store', // Always fetch fresh data
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch work orders');
+    // Fetch work orders (mock or Airtable)
+    let workOrders;
+    if (USE_MOCK_DATA) {
+      console.log('🎭 Using mock data for development');
+      workOrders = await getMockWorkOrders();
+    } else {
+      console.log('🔗 Fetching from Airtable');
+      workOrders = await fetchWorkOrdersForTechnician(technicianEmail);
     }
 
-    const data = await response.json();
-    return data.workOrders;
+    // Group by date
+    const grouped = groupWorkOrdersByDate(workOrders);
+    return grouped;
   } catch (error) {
     console.error('Error fetching work orders:', error);
     return { today: [], upcoming: [], overdue: [] };
@@ -47,7 +52,7 @@ export default async function DashboardPage() {
   }
 
   // Fetch work orders
-  const workOrders = await getWorkOrders();
+  const workOrders = await getWorkOrders(user.email!);
 
   return (
     <div className="min-h-screen bg-gray-50">
