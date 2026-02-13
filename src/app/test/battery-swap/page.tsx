@@ -19,12 +19,26 @@ export default function BatterySwapTestPage() {
   const handleSubmit = async (data: any) => {
     console.log('Form submitted:', data);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Call API
+    const response = await fetch('/api/work-orders/88460/battery-swaps', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
 
-    setSubmittedData(data);
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Failed to submit battery swaps');
+    }
 
-    alert('Battery swap form submitted successfully!');
+    const result = await response.json();
+    setSubmittedData(result);
+
+    alert(
+      `✅ ${result.batterySwaps.length} battery swap(s) saved successfully!\nWork order completed.`
+    );
   };
 
   return (
