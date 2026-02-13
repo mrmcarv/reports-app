@@ -235,9 +235,9 @@
 
 ### UI Components (Minimal for MVP)
 
-- [ ] **TASK-125:** Set up basic shadcn/ui components (Button, Card, Input)
-- [ ] **TASK-126:** Create Loading spinner component
-- [ ] **TASK-127:** Create Toast/notification system (simple)
+- [x] **TASK-125:** Set up basic shadcn/ui components (Button, Card, Input)
+- [x] **TASK-126:** Create Loading spinner component
+- [x] **TASK-127:** Create Toast/notification system (simple)
 
 ### Mobile Optimization (Basic Testing)
 
