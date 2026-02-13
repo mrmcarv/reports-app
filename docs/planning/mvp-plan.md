@@ -120,7 +120,7 @@
 - [x] **TASK-040:** Implement work order fetching from Airtable (DeBloq base)
 - [x] **TASK-041:** Create WorkOrderCard component
 - [x] **TASK-042:** Create WorkOrderList component with grouping (Today/Upcoming/Overdue)
-- [ ] **TASK-043:** Add refresh functionality
+- [x] **TASK-043:** Add refresh functionality
 - [ ] **TASK-044:** Add loading and error states
 - [ ] **TASK-045:** Test dashboard with real Airtable data
 
