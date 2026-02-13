@@ -115,9 +115,9 @@
 
 ### Dashboard
 
-- [ ] **TASK-038:** Create dashboard page (app/dashboard/page.tsx)
-- [ ] **TASK-039:** Create work order list API route (GET /api/work-orders/list)
-- [ ] **TASK-040:** Implement work order fetching from Airtable (DeBloq base)
+- [x] **TASK-038:** Create dashboard page (app/dashboard/page.tsx)
+- [x] **TASK-039:** Create work order list API route (GET /api/work-orders)
+- [x] **TASK-040:** Implement work order fetching from Airtable (DeBloq base)
 - [ ] **TASK-041:** Create WorkOrderCard component
 - [ ] **TASK-042:** Create WorkOrderList component with grouping (Today/Upcoming/Overdue)
 - [ ] **TASK-043:** Add refresh functionality
