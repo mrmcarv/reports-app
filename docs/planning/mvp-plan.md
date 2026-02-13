@@ -182,7 +182,7 @@
 - [x] **TASK-087:** Implement Ground & Plexo Test section
 - [x] **TASK-088:** Implement Completion section
 - [x] **TASK-089:** Integrate FileUpload for all photo sections
-- [ ] **TASK-090:** Save form data as JSON with embedded photo URLs
+- [x] **TASK-090:** Save form data as JSON with embedded photo URLs
 - [ ] **TASK-091:** Test wind audit form end-to-end
 
 ### Survey Form (Deferred - Placeholder Only)
@@ -191,10 +191,10 @@
 
 ### Form Submission API
 
-- [ ] **TASK-093:** Create form submission API route (POST /api/work-orders/[id]/form-submission)
-- [ ] **TASK-094:** Implement save to Supabase (formType, formData JSONB)
-- [ ] **TASK-095:** Add authorization check (WO belongs to user)
-- [ ] **TASK-096:** Return submission ID with localId for parts linking
+- [x] **TASK-093:** Create form submission API route (POST /api/work-orders/[id]/form-submission)
+- [x] **TASK-094:** Implement save to Supabase (formType, formData JSONB)
+- [x] **TASK-095:** Add authorization check (WO belongs to user)
+- [x] **TASK-096:** Return submission ID with localId for parts linking
 - [ ] **TASK-097:** Test form submission with all form types
 
 ### Multi-Form Flow (Maintenance + Wind Audit only)
