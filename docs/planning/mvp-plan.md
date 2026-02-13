@@ -208,16 +208,16 @@
 
 ### Parts Tracking (Consolidated at End)
 
-- [ ] **TASK-104:** Create PartsTrackingPage component (components/forms/PartsTrackingPage.tsx)
-- [ ] **TASK-105:** Create FormPartsSection component (components/parts/FormPartsSection.tsx)
-- [ ] **TASK-106:** Create PartEntry component (components/parts/PartEntry.tsx)
-- [ ] **TASK-107:** Display all completed forms as sections
-- [ ] **TASK-108:** Implement parts input (part name + quantity) per form
-- [ ] **TASK-109:** Add/remove part entries functionality
-- [ ] **TASK-110:** Filter forms based on requiresPartsTracking config
-- [ ] **TASK-111:** Create parts API route (POST /api/work-orders/[id]/parts)
-- [ ] **TASK-112:** Implement save to Supabase with formSubmissionId (use localId from payload)
-- [ ] **TASK-113:** Add "Skip - No Parts" button
+- [x] **TASK-104:** Create PartsTrackingPage component (components/forms/PartsTrackingPage.tsx)
+- [x] **TASK-105:** Create FormPartsSection component (components/parts/FormPartsSection.tsx)
+- [x] **TASK-106:** Create PartEntry component (components/parts/PartEntry.tsx)
+- [x] **TASK-107:** Display all completed forms as sections
+- [x] **TASK-108:** Implement parts input (part name + quantity) per form
+- [x] **TASK-109:** Add/remove part entries functionality
+- [x] **TASK-110:** Filter forms based on requiresPartsTracking config
+- [x] **TASK-111:** Create parts API route (POST /api/work-orders/[id]/parts)
+- [x] **TASK-112:** Implement save to Supabase with formSubmissionId (use localId from payload)
+- [x] **TASK-113:** Add "Skip - No Parts" button
 - [ ] **TASK-114:** Test parts tracking with multiple forms
 
 ### Work Order Completion
