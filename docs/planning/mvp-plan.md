@@ -121,17 +121,17 @@
 - [x] **TASK-041:** Create WorkOrderCard component
 - [x] **TASK-042:** Create WorkOrderList component with grouping (Today/Upcoming/Overdue)
 - [x] **TASK-043:** Add refresh functionality
-- [ ] **TASK-044:** Add loading and error states
+- [x] **TASK-044:** Add loading and error states
 - [ ] **TASK-045:** Test dashboard with real Airtable data
 
 ### Work Order Initialization
 
-- [ ] **TASK-046:** Create work order page (app/work-order/[id]/page.tsx)
-- [ ] **TASK-047:** Create init API route (POST /api/work-orders/init)
-- [ ] **TASK-048:** Implement work order creation/retrieval in Supabase
-- [ ] **TASK-049:** Parse URL parameters (WO_ID, WO_TYPE, etc.)
-- [ ] **TASK-050:** Fetch work order from Airtable (DeBloq) if needed
-- [ ] **TASK-051:** Add authorization check (WO belongs to logged-in user)
+- [x] **TASK-046:** Create work order page (app/work-order/[id]/page.tsx)
+- [x] **TASK-047:** Create init API route (POST /api/work-orders/init)
+- [x] **TASK-048:** Implement work order creation/retrieval in Supabase
+- [x] **TASK-049:** Parse URL parameters (WO_ID, WO_TYPE, etc.)
+- [x] **TASK-050:** Fetch work order from Airtable (DeBloq) if needed
+- [x] **TASK-051:** Add authorization check (WO belongs to logged-in user)
 - [ ] **TASK-052:** Test work order initialization flow
 
 ### File Upload Component
