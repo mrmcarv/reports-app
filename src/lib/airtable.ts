@@ -25,6 +25,7 @@ export interface AirtableWorkOrder {
   workType: 'battery_swap' | 'maintenance' | 'wind_audit' | 'survey';
   client?: string;
   pointCode?: string;
+  fullAddress?: string;
   lockerVersion?: string;
   initialIssue?: string;
   plannedDate?: string;
@@ -89,6 +90,7 @@ export async function fetchWorkOrdersForTechnician(
         workType,
         client: record.get('Client') as string | undefined,
         pointCode: record.get('Bloqit ID') as string | undefined,
+        fullAddress: record.get('Full Address') as string | undefined,
         lockerVersion: record.get('Locker') as string | undefined,
         initialIssue: record.get('Description Complete') as string | undefined,
         plannedDate: record.get('Planned Date') as string | undefined,
@@ -153,6 +155,7 @@ export async function fetchWorkOrderById(
       workType,
       client: record.get('Client') as string | undefined,
       pointCode: record.get('Bloqit ID') as string | undefined,
+      fullAddress: record.get('Full Address') as string | undefined,
       lockerVersion: record.get('Locker') as string | undefined,
       initialIssue: record.get('Description Complete') as string | undefined,
       plannedDate: record.get('Planned Date') as string | undefined,

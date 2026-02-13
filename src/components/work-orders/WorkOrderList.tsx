@@ -54,7 +54,7 @@ function WorkOrderSection({
       </div>
 
       {/* Work Order Cards */}
-      <div className="space-y-3">
+      <div className="space-y-6">
         {workOrders.map((workOrder) => (
           <WorkOrderCard key={workOrder.id} workOrder={workOrder} />
         ))}

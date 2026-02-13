@@ -13,6 +13,9 @@
 
 import Link from 'next/link';
 import { AirtableWorkOrder } from '@/lib/airtable';
+import { Battery, Wrench, Wind, ClipboardList, FileText, User, Home, Clock, Copy } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
+import { toast } from 'sonner';
 
 interface WorkOrderCardProps {
   workOrder: AirtableWorkOrder;
@@ -25,33 +28,33 @@ function getWorkTypeInfo(workType: string) {
   switch (workType) {
     case 'battery_swap':
       return {
-        icon: '🔋',
+        icon: Battery,
         label: 'BATTERY SWAP',
-        headerColor: 'bg-blue-600',
+        headerColor: 'bg-gray-100',
       };
     case 'maintenance':
       return {
-        icon: '🔧',
+        icon: Wrench,
         label: 'MAINTENANCE',
-        headerColor: 'bg-green-600',
+        headerColor: 'bg-gray-100',
       };
     case 'wind_audit':
       return {
-        icon: '🌬️',
+        icon: Wind,
         label: 'WIND AUDIT',
-        headerColor: 'bg-purple-600',
+        headerColor: 'bg-gray-100',
       };
     case 'survey':
       return {
-        icon: '📋',
+        icon: ClipboardList,
         label: 'SURVEY',
-        headerColor: 'bg-slate-600',
+        headerColor: 'bg-gray-100',
       };
     default:
       return {
-        icon: '📄',
+        icon: FileText,
         label: workType.toUpperCase(),
-        headerColor: 'bg-gray-600',
+        headerColor: 'bg-gray-100',
       };
   }
 }
@@ -92,43 +95,86 @@ function formatDate(dateString?: string): string {
 }
 
 /**
- * Get status badge info (color and label)
+ * Format step/status text (remove leading numbers and simplify)
  */
-function getStatusInfo(step?: string, status?: string) {
-  // Use step or status for display
-  const label = step || status || 'Unknown';
+function formatStepStatus(step?: string): string {
+  if (!step) return '';
 
-  // Color based on status/step
-  if (label.toLowerCase().includes('scheduled')) {
-    return { color: 'bg-yellow-100 text-yellow-800', dot: 'bg-yellow-500' };
-  } else if (label.toLowerCase().includes('progress')) {
-    return { color: 'bg-blue-100 text-blue-800', dot: 'bg-blue-500' };
-  } else if (label.toLowerCase().includes('complete')) {
-    return { color: 'bg-green-100 text-green-800', dot: 'bg-green-500' };
+  // Remove leading number and dash (e.g., "3-Scheduled " -> "Scheduled")
+  const cleaned = step.replace(/^\d+-?\s*/, '').trim();
+
+  // Map to simplified labels (lowercase)
+  const lowerCleaned = cleaned.toLowerCase();
+  if (lowerCleaned.includes('schedul')) return 'scheduled';
+  if (lowerCleaned.includes('progress')) return 'in progress';
+  if (lowerCleaned.includes('validat')) return 'validating';
+  if (lowerCleaned.includes('done') || lowerCleaned.includes('complet')) return 'completed';
+
+  // Return cleaned version if no mapping found
+  return cleaned.toLowerCase();
+}
+
+/**
+ * Get status circle color based on step number
+ */
+function getStatusCircleColor(step?: string): string {
+  if (!step) return 'bg-gray-400';
+
+  // Extract step number
+  const stepNumber = parseInt(step.charAt(0), 10);
+
+  switch (stepNumber) {
+    case 3: return 'bg-gray-400';      // Scheduled
+    case 4: return 'bg-blue-400';      // In Progress
+    case 5: return 'bg-yellow-400';    // Validating
+    case 6: return 'bg-green-500';     // Completed
+    default: return 'bg-gray-400';
   }
-
-  return { color: 'bg-gray-100 text-gray-800', dot: 'bg-gray-500' };
 }
 
 export function WorkOrderCard({ workOrder }: WorkOrderCardProps) {
   const workTypeInfo = getWorkTypeInfo(workOrder.workType);
   const time = formatTime(workOrder.plannedDate);
   const date = formatDate(workOrder.plannedDate);
-  const statusInfo = getStatusInfo(workOrder.step, workOrder.status);
+  const formattedStatus = formatStepStatus(workOrder.step);
+  const statusCircleColor = getStatusCircleColor(workOrder.step);
+
+  const handleCopyAddress = async () => {
+    if (!workOrder.fullAddress) return;
+
+    try {
+      await navigator.clipboard.writeText(workOrder.fullAddress);
+      toast.info(workOrder.fullAddress, {
+        description: 'Address copied to clipboard',
+      });
+    } catch (err) {
+      toast.error('Failed to copy address');
+    }
+  };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-      {/* Header: Work Type + WO ID */}
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
+      {/* Header: Work Type + WO ID + Status */}
       <div className={`${workTypeInfo.headerColor} px-4 py-3 flex items-center gap-3`}>
-        <span className="text-3xl">{workTypeInfo.icon}</span>
+        <div className="bg-white rounded-lg p-2">
+          <workTypeInfo.icon className="w-6 h-6 text-[#EF4A23]" />
+        </div>
         <div className="flex-1">
-          <div className="text-white text-xs font-medium opacity-90">
+          <div className="text-gray-600 text-xs font-medium">
             {workTypeInfo.label}
           </div>
-          <div className="text-white text-xl font-bold">
+          <div className="text-gray-900 text-xl font-bold">
             #{workOrder.workOrderId}
           </div>
         </div>
+        {formattedStatus && (
+          <div className="flex items-center gap-1">
+            <span className={`w-2 h-2 rounded-full ${statusCircleColor}`}></span>
+            <span className="text-gray-700 text-sm font-medium">
+              {formattedStatus}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Content */}
@@ -136,19 +182,7 @@ export function WorkOrderCard({ workOrder }: WorkOrderCardProps) {
         {/* Time and Date */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-gray-900">
-            <svg
-              className="w-5 h-5 text-red-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <Clock className="w-5 h-5 text-[#EF4A23]" />
             <span className="font-semibold text-lg">{time}</span>
           </div>
           <div className="text-sm text-gray-500">
@@ -156,63 +190,53 @@ export function WorkOrderCard({ workOrder }: WorkOrderCardProps) {
           </div>
         </div>
 
+        <Separator />
+
         {/* Client */}
         {workOrder.client && (
           <div className="flex items-center gap-2 text-gray-700">
-            <svg
-              className="w-4 h-4 text-gray-400 flex-shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              />
-            </svg>
+            <User className="w-4 h-4 text-gray-400 flex-shrink-0" />
             <span className="text-sm font-medium">{workOrder.client}</span>
           </div>
         )}
 
         {/* Location */}
-        {workOrder.pointCode && (
+        {workOrder.fullAddress && (
           <div className="flex items-center gap-2 text-gray-700">
-            <svg
-              className="w-4 h-4 text-gray-400 flex-shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <Home className="w-4 h-4 text-gray-400 flex-shrink-0" />
+            <span className="text-sm truncate flex-1">{workOrder.fullAddress}</span>
+            <button
+              onClick={handleCopyAddress}
+              className="p-1.5 hover:bg-gray-100 rounded transition-colors flex-shrink-0"
+              title="Copy address"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-              />
-            </svg>
-            <span className="text-sm">{workOrder.pointCode}</span>
+              <Copy className="w-4 h-4 text-gray-400" />
+            </button>
           </div>
         )}
 
-        {/* Status Badge */}
-        <div className="flex items-center gap-2">
-          <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${statusInfo.color}`}>
-            <span className={`w-2 h-2 rounded-full ${statusInfo.dot}`}></span>
-            {workOrder.step || workOrder.status}
-          </span>
-        </div>
+        <Separator />
 
-        {/* Action Button */}
-        <Link
-          href={`/work-order/${workOrder.workOrderId}`}
-          className="block w-full mt-4"
-        >
-          <button className="w-full px-4 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-colors">
-            Open Job
+        {/* Action Buttons */}
+        <div className="flex gap-3">
+          {/* Reschedule Button - Disabled */}
+          <button
+            disabled
+            className="flex-1 px-4 py-3 bg-gray-100 text-gray-500 font-semibold rounded-xl cursor-not-allowed"
+          >
+            Reschedule
           </button>
-        </Link>
+
+          {/* Open Job Button - Active */}
+          <Link
+            href={`/work-order/${workOrder.workOrderId}`}
+            className="flex-1"
+          >
+            <button className="w-full px-4 py-3 bg-[#EF4A23] hover:bg-[#D94420] text-white font-semibold rounded-xl shadow-sm transition-colors">
+              Open Job
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
