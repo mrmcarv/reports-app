@@ -62,11 +62,32 @@ export async function fetchWorkOrdersForTechnician(
       })
       .all();
 
-    return records.map((record) => ({
-      id: record.id,
-      workOrderId: record.get('WO_ID') as string,
-      workType: record.get('Stage Type') as AirtableWorkOrder['workType'],
-      client: record.get('Client') as string | undefined,
+    return records.map((record) => {
+      // Stage Type returns an array, get first element
+      const stageTypeRaw = record.get('Stage Type');
+      const stageType = Array.isArray(stageTypeRaw)
+        ? stageTypeRaw[0]
+        : stageTypeRaw;
+
+      // Map Airtable stage type to our work type
+      let workType: AirtableWorkOrder['workType'];
+      if (stageType === 'Battery Swap') {
+        workType = 'battery_swap';
+      } else if (stageType === 'Work Order') {
+        workType = 'maintenance';
+      } else if (stageType === 'Wind Audit') {
+        workType = 'wind_audit';
+      } else if (stageType === 'Survey') {
+        workType = 'survey';
+      } else {
+        workType = 'maintenance'; // Default to maintenance
+      }
+
+      return {
+        id: record.id,
+        workOrderId: record.get('WO_ID') as string,
+        workType,
+        client: record.get('Client') as string | undefined,
       pointCode: record.get('Bloqit ID') as string | undefined,
       lockerVersion: record.get('Locker') as string | undefined,
       initialIssue: record.get('Description Complete') as string | undefined,
@@ -104,10 +125,31 @@ export async function fetchWorkOrderById(
     }
 
     const record = records[0];
+
+    // Stage Type returns an array, get first element
+    const stageTypeRaw = record.get('Stage Type');
+    const stageType = Array.isArray(stageTypeRaw)
+      ? stageTypeRaw[0]
+      : stageTypeRaw;
+
+    // Map Airtable stage type to our work type
+    let workType: AirtableWorkOrder['workType'];
+    if (stageType === 'Battery Swap') {
+      workType = 'battery_swap';
+    } else if (stageType === 'Work Order') {
+      workType = 'maintenance';
+    } else if (stageType === 'Wind Audit') {
+      workType = 'wind_audit';
+    } else if (stageType === 'Survey') {
+      workType = 'survey';
+    } else {
+      workType = 'maintenance'; // Default to maintenance
+    }
+
     return {
       id: record.id,
       workOrderId: record.get('WO_ID') as string,
-      workType: record.get('Stage Type') as AirtableWorkOrder['workType'],
+      workType,
       client: record.get('Client') as string | undefined,
       pointCode: record.get('Bloqit ID') as string | undefined,
       lockerVersion: record.get('Locker') as string | undefined,
