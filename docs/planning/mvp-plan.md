@@ -162,13 +162,13 @@
 
 ### Maintenance Form
 
-- [ ] **TASK-073:** Create MaintenanceForm component (components/forms/MaintenanceForm.tsx)
-- [ ] **TASK-074:** Add reporting category dropdown (from formConfig)
-- [ ] **TASK-075:** Implement Issue Identification section
-- [ ] **TASK-076:** Implement Initial Assessment section (before photos)
-- [ ] **TASK-077:** Implement Work Performed section (work photos)
-- [ ] **TASK-078:** Implement Completion section (after photos)
-- [ ] **TASK-079:** Integrate FileUpload component for all photo sections
+- [x] **TASK-073:** Create MaintenanceForm component (components/forms/MaintenanceForm.tsx)
+- [x] **TASK-074:** Add reporting category dropdown (from formConfig)
+- [x] **TASK-075:** Implement Issue Identification section
+- [x] **TASK-076:** Implement Initial Assessment section (before photos)
+- [x] **TASK-077:** Implement Work Performed section (work photos)
+- [x] **TASK-078:** Implement Completion section (after photos)
+- [x] **TASK-079:** Integrate FileUpload component for all photo sections
 - [ ] **TASK-080:** Save form data as JSON with embedded photo URLs
 - [ ] **TASK-081:** Test maintenance form with different categories
 
