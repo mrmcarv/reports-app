@@ -119,7 +119,7 @@
 - [x] **TASK-039:** Create work order list API route (GET /api/work-orders)
 - [x] **TASK-040:** Implement work order fetching from Airtable (DeBloq base)
 - [x] **TASK-041:** Create WorkOrderCard component
-- [ ] **TASK-042:** Create WorkOrderList component with grouping (Today/Upcoming/Overdue)
+- [x] **TASK-042:** Create WorkOrderList component with grouping (Today/Upcoming/Overdue)
 - [ ] **TASK-043:** Add refresh functionality
 - [ ] **TASK-044:** Add loading and error states
 - [ ] **TASK-045:** Test dashboard with real Airtable data

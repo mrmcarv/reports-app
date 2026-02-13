@@ -13,6 +13,7 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { WorkOrderList } from '@/components/work-orders/WorkOrderList';
+import { RefreshButton } from '@/components/RefreshButton';
 import {
   fetchWorkOrdersForTechnician,
   groupWorkOrdersByDate,
@@ -80,13 +81,16 @@ export default async function DashboardPage() {
 
       {/* Main content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold text-gray-900">
-            Assigned Work Orders
-          </h2>
-          <p className="text-sm text-gray-600 mt-1">
-            Work orders scheduled for completion
-          </p>
+        <div className="mb-6 flex items-start justify-between gap-4">
+          <div>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Assigned Work Orders
+            </h2>
+            <p className="text-sm text-gray-600 mt-1">
+              Work orders scheduled for completion
+            </p>
+          </div>
+          <RefreshButton />
         </div>
 
         {/* Work order list */}
