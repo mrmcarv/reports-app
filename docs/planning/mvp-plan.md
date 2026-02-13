@@ -150,14 +150,14 @@
 - [x] **TASK-061:** Create BatterySwapForm component (components/forms/BatterySwapForm.tsx)
 - [x] **TASK-062:** Implement battery position selector (dropdown: 1, 2, 3 or bat1, bat2, bat3)
 - [x] **TASK-063:** Implement QR scanner for serial numbers (lib/qr-scanner.ts)
-- [ ] **TASK-064:** Add multiple battery swap entries (add/remove)
+- [x] **TASK-064:** Add multiple battery swap entries (add/remove)
 - [x] **TASK-065:** Implement old/new battery SN inputs with QR buttons
-- [ ] **TASK-066:** Add optional notes field
+- [x] **TASK-066:** Add optional notes field
 - [x] **TASK-067:** Add optional photos upload
-- [ ] **TASK-068:** Create API route (POST /api/work-orders/[id]/battery-swaps)
-- [ ] **TASK-069:** Implement save to Supabase (multiple rows, one per battery)
-- [ ] **TASK-070:** Validate no duplicate battery positions
-- [ ] **TASK-071:** Auto-complete work order after battery swap submission (standalone only)
+- [x] **TASK-068:** Create API route (POST /api/work-orders/[id]/battery-swaps)
+- [x] **TASK-069:** Implement save to Supabase (multiple rows, one per battery)
+- [x] **TASK-070:** Validate no duplicate battery positions
+- [x] **TASK-071:** Auto-complete work order after battery swap submission (standalone only)
 - [ ] **TASK-072:** Test battery swap form end-to-end
 
 ### Maintenance Form
