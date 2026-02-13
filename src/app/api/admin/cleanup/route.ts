@@ -10,6 +10,7 @@
 import { createClient } from '@/lib/supabase/server';
 import { db } from '@/lib/db';
 import { workOrders, formSubmissions, batterySwaps, partsUsed } from '@/lib/schema';
+import { checkAdmin } from '@/lib/admin';
 
 export async function POST(request: Request) {
   // Security: Only allow in development
@@ -30,6 +31,21 @@ export async function POST(request: Request) {
     if (!user) {
       return Response.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    // Admin check (require admin user)
+    const adminCheck = checkAdmin(user);
+    if (!adminCheck.isAdmin) {
+      console.warn(`⚠️ Non-admin user attempted cleanup: ${user.email}`);
+      return Response.json(
+        {
+          error: 'Admin access required',
+          reason: adminCheck.reason,
+        },
+        { status: 403 }
+      );
+    }
+
+    console.log(`🔐 Admin user ${user.email} initiated cleanup`);
 
     console.log('🧹 Starting database cleanup...');
 
@@ -113,6 +129,18 @@ export async function GET() {
 
     if (!user) {
       return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Admin check
+    const adminCheck = checkAdmin(user);
+    if (!adminCheck.isAdmin) {
+      return Response.json(
+        {
+          error: 'Admin access required',
+          reason: adminCheck.reason,
+        },
+        { status: 403 }
+      );
     }
 
     // Return current counts
