@@ -83,8 +83,8 @@ export function WindAuditFormWrapper({
       )}
 
       <WindAuditForm
+        workOrderId={workOrderId}
         onSubmit={handleSubmit}
-        isSubmitting={isSubmitting}
       />
     </div>
   );
