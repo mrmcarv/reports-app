@@ -55,7 +55,7 @@ export function PartsTrackingForm({
     }));
   };
 
-  const handleSkip = async () => {
+  const handleSkip = () => {
     // Skip parts tracking and go directly to completion
     router.push(`/work-order/${workOrderId}/complete`);
   };
