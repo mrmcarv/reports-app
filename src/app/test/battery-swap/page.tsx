@@ -67,7 +67,7 @@ export default function BatterySwapTestPage() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
           <BatterySwapForm
-            workOrderId="test-88123"
+            workOrderId="88460"
             onSubmit={handleSubmit}
             onCancel={() => alert('Form cancelled')}
           />
