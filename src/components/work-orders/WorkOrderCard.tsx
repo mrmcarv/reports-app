@@ -13,7 +13,7 @@
 
 import Link from 'next/link';
 import { AirtableWorkOrder } from '@/lib/airtable';
-import { Battery, Wrench, Wind, ClipboardList, FileText, User, Home, Clock, Copy } from 'lucide-react';
+import { Battery, Wrench, Wind, ClipboardList, FileText, User, Home, Clock, Copy, Footprints } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { toast } from 'sonner';
 
@@ -112,7 +112,7 @@ function formatStepStatus(step?: string): string {
   if (lowerCleaned.includes('done') || lowerCleaned.includes('complet')) return 'completed';
 
   // Return cleaned version if no mapping found
-  return cleaned.toLowerCase();
+  return cleaned;
 }
 
 /**
@@ -170,11 +170,10 @@ export function WorkOrderCard({ workOrder, isOverdue = false }: WorkOrderCardPro
             #{workOrder.workOrderId}
           </div>
         </div>
-        {formattedStatus && (
+        {time && (
           <div className="flex items-center gap-1">
-            <span className={`w-2 h-2 rounded-full ${statusCircleColor}`}></span>
-            <span className="text-gray-700 text-sm font-medium">
-              {formattedStatus}
+            <span className="text-gray-700 text-lg font-bold">
+              {time}
             </span>
           </div>
         )}
@@ -182,18 +181,6 @@ export function WorkOrderCard({ workOrder, isOverdue = false }: WorkOrderCardPro
 
       {/* Content */}
       <div className="p-4 space-y-3">
-        {/* Time and Date */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-gray-900">
-            <Clock className="w-5 h-5 text-[#EF4A23]" />
-            <span className="font-semibold text-lg">{time}</span>
-          </div>
-          <div className="text-sm text-gray-500">
-            {date}
-          </div>
-        </div>
-
-        <Separator />
 
         {/* Client */}
         {workOrder.client && (
@@ -218,7 +205,20 @@ export function WorkOrderCard({ workOrder, isOverdue = false }: WorkOrderCardPro
           </div>
         )}
 
-        <Separator />
+        {/* Status */}
+        {formattedStatus && (
+          <div className="mb-6">
+            <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium ${
+              statusCircleColor === 'bg-gray-400' ? 'bg-gray-100 text-gray-700' :
+              statusCircleColor === 'bg-blue-400' ? 'bg-blue-100 text-blue-700' :
+              statusCircleColor === 'bg-yellow-400' ? 'bg-yellow-100 text-yellow-700' :
+              'bg-green-100 text-green-700'
+            }`}>
+              <span className={`w-2 h-2 rounded-full ${statusCircleColor}`}></span>
+              {formattedStatus}
+            </span>
+          </div>
+        )}
 
         {/* Action Buttons */}
         <div className="flex gap-3">
