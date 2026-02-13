@@ -19,6 +19,7 @@ import { toast } from 'sonner';
 
 interface WorkOrderCardProps {
   workOrder: AirtableWorkOrder;
+  isOverdue?: boolean;
 }
 
 /**
@@ -132,7 +133,7 @@ function getStatusCircleColor(step?: string): string {
   }
 }
 
-export function WorkOrderCard({ workOrder }: WorkOrderCardProps) {
+export function WorkOrderCard({ workOrder, isOverdue = false }: WorkOrderCardProps) {
   const workTypeInfo = getWorkTypeInfo(workOrder.workType);
   const time = formatTime(workOrder.plannedDate);
   const date = formatDate(workOrder.plannedDate);
@@ -153,7 +154,9 @@ export function WorkOrderCard({ workOrder }: WorkOrderCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
+    <div className={`bg-white rounded-2xl shadow-sm border-2 overflow-hidden hover:shadow-md transition-shadow ${
+      isOverdue ? 'border-orange-500' : 'border-gray-200'
+    }`}>
       {/* Header: Work Type + WO ID + Status */}
       <div className={`${workTypeInfo.headerColor} px-4 py-3 flex items-center gap-3`}>
         <div className="bg-white rounded-lg p-2">

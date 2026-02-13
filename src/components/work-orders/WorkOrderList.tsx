@@ -1,16 +1,18 @@
 /**
  * Work Order List Component
  *
- * Displays work orders grouped by date category:
- * - Overdue (red badge)
- * - Today (blue badge)
- * - Upcoming (gray badge)
+ * Displays today's work orders (includes overdue) with status filtering:
+ * - All (default)
+ * - Scheduled
+ * - In Progress/Validating
+ * - Completed
  *
- * Shows empty state if no work orders in a category
+ * Overdue items shown with orange border
  */
 
 'use client';
 
+import { useState, useMemo } from 'react';
 import { AirtableWorkOrder } from '@/lib/airtable';
 import { WorkOrderCard } from './WorkOrderCard';
 
@@ -22,52 +24,54 @@ interface WorkOrderListProps {
   };
 }
 
-interface SectionProps {
-  title: string;
-  count: number;
-  workOrders: AirtableWorkOrder[];
-  badgeColor: string;
-  emptyMessage: string;
+type StatusFilter = 'scheduled' | 'in-progress' | 'completed';
+
+/**
+ * Helper to determine if work order is overdue
+ */
+function isOverdue(workOrder: AirtableWorkOrder, overdueList: AirtableWorkOrder[]): boolean {
+  return overdueList.some(wo => wo.id === workOrder.id);
 }
 
-function WorkOrderSection({
-  title,
-  count,
-  workOrders,
-  badgeColor,
-  emptyMessage,
-}: SectionProps) {
-  if (workOrders.length === 0) {
-    return null; // Don't show empty sections
+/**
+ * Helper to check if work order matches status filter
+ */
+function matchesStatusFilter(workOrder: AirtableWorkOrder, filter: StatusFilter): boolean {
+  const step = workOrder.step || '';
+  const stepNumber = parseInt(step.charAt(0), 10);
+
+  switch (filter) {
+    case 'scheduled':
+      return stepNumber === 3;
+    case 'in-progress':
+      return stepNumber === 4 || stepNumber === 5; // In Progress or Validating
+    case 'completed':
+      return stepNumber === 6;
+    default:
+      return false;
   }
-
-  return (
-    <div className="mb-8">
-      {/* Section Header */}
-      <div className="flex items-center gap-3 mb-4">
-        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-        <span
-          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${badgeColor}`}
-        >
-          {count}
-        </span>
-      </div>
-
-      {/* Work Order Cards */}
-      <div className="space-y-6">
-        {workOrders.map((workOrder) => (
-          <WorkOrderCard key={workOrder.id} workOrder={workOrder} />
-        ))}
-      </div>
-    </div>
-  );
 }
 
 export function WorkOrderList({ workOrders }: WorkOrderListProps) {
-  const totalCount =
-    workOrders.today.length +
-    workOrders.upcoming.length +
-    workOrders.overdue.length;
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('scheduled');
+
+  // Today's work orders include overdue items
+  const todayWorkOrders = [...workOrders.overdue, ...workOrders.today];
+  const totalCount = todayWorkOrders.length;
+
+  // Calculate counts for each status
+  const statusCounts = useMemo(() => {
+    return {
+      scheduled: todayWorkOrders.filter(wo => matchesStatusFilter(wo, 'scheduled')).length,
+      inProgress: todayWorkOrders.filter(wo => matchesStatusFilter(wo, 'in-progress')).length,
+      completed: todayWorkOrders.filter(wo => matchesStatusFilter(wo, 'completed')).length,
+    };
+  }, [todayWorkOrders]);
+
+  // Filter work orders by status
+  const filteredWorkOrders = useMemo(() => {
+    return todayWorkOrders.filter(wo => matchesStatusFilter(wo, statusFilter));
+  }, [statusFilter, todayWorkOrders]);
 
   // Empty state
   if (totalCount === 0) {
@@ -101,33 +105,62 @@ export function WorkOrderList({ workOrders }: WorkOrderListProps) {
   }
 
   return (
-    <div>
-      {/* Overdue Section (highest priority) */}
-      <WorkOrderSection
-        title="Overdue"
-        count={workOrders.overdue.length}
-        workOrders={workOrders.overdue}
-        badgeColor="bg-red-100 text-red-800"
-        emptyMessage="No overdue work orders"
-      />
+    <div className="space-y-6">
+      {/* Status Filter Pills */}
+      <div className="flex items-center gap-3 w-full">
+        <button
+          onClick={() => setStatusFilter('scheduled')}
+          className={`flex-1 flex flex-col items-center justify-center px-6 py-3 rounded-2xl transition-colors ${
+            statusFilter === 'scheduled'
+              ? 'bg-orange-100 text-orange-900'
+              : 'bg-gray-100 text-gray-500'
+          }`}
+        >
+          <span className="text-2xl font-bold">{statusCounts.scheduled}</span>
+          <span className="text-xs font-medium mt-1">To Do</span>
+        </button>
 
-      {/* Today Section */}
-      <WorkOrderSection
-        title="Today"
-        count={workOrders.today.length}
-        workOrders={workOrders.today}
-        badgeColor="bg-blue-100 text-blue-800"
-        emptyMessage="No work orders scheduled for today"
-      />
+        <button
+          onClick={() => setStatusFilter('in-progress')}
+          className={`flex-1 flex flex-col items-center justify-center px-6 py-3 rounded-2xl transition-colors ${
+            statusFilter === 'in-progress'
+              ? 'bg-orange-100 text-orange-900'
+              : 'bg-gray-100 text-gray-500'
+          }`}
+        >
+          <span className="text-2xl font-bold">{statusCounts.inProgress}</span>
+          <span className="text-xs font-medium mt-1">In Progress</span>
+        </button>
 
-      {/* Upcoming Section */}
-      <WorkOrderSection
-        title="Upcoming"
-        count={workOrders.upcoming.length}
-        workOrders={workOrders.upcoming}
-        badgeColor="bg-gray-100 text-gray-800"
-        emptyMessage="No upcoming work orders"
-      />
+        <button
+          onClick={() => setStatusFilter('completed')}
+          className={`flex-1 flex flex-col items-center justify-center px-6 py-3 rounded-2xl transition-colors ${
+            statusFilter === 'completed'
+              ? 'bg-orange-100 text-orange-900'
+              : 'bg-gray-100 text-gray-500'
+          }`}
+        >
+          <span className="text-2xl font-bold">{statusCounts.completed}</span>
+          <span className="text-xs font-medium mt-1">Done</span>
+        </button>
+      </div>
+
+      {/* Work Order Cards */}
+      {filteredWorkOrders.length === 0 ? (
+        <div className="bg-white rounded-lg border border-gray-200 p-8 text-center">
+          <p className="text-gray-500">No work orders match the selected filters.</p>
+        </div>
+      ) : (
+        <div className="space-y-6">
+          {filteredWorkOrders.map((workOrder) => (
+            <WorkOrderCard
+              key={workOrder.id}
+              workOrder={workOrder}
+              isOverdue={isOverdue(workOrder, workOrders.overdue)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

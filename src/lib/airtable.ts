@@ -51,7 +51,7 @@ export async function fetchWorkOrdersForTechnician(
   technicianEmail: string
 ): Promise<AirtableWorkOrder[]> {
   try {
-    const records = await debloqBase('Work Orders')
+    const records = await debloqBase('tblRJg3g7olM5agaY')
       .select({
         view: 'Grid view',
         filterByFormula: `AND(
@@ -115,7 +115,7 @@ export async function fetchWorkOrderById(
   workOrderId: string
 ): Promise<AirtableWorkOrder | null> {
   try {
-    const records = await debloqBase('Work Orders')
+    const records = await debloqBase('tblRJg3g7olM5agaY')
       .select({
         view: 'Grid view',
         filterByFormula: `{WO_ID} = "${workOrderId}"`,
