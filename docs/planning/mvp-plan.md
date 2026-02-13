@@ -174,14 +174,14 @@
 
 ### Wind Audit Form
 
-- [ ] **TASK-082:** Create WindAuditForm component (components/forms/WindAuditForm.tsx)
-- [ ] **TASK-083:** Implement Site Check section (collapsible)
-- [ ] **TASK-084:** Implement Wind Audit section
-- [ ] **TASK-085:** Implement Locker Before section
-- [ ] **TASK-086:** Implement Locker Test section
-- [ ] **TASK-087:** Implement Ground & Plexo Test section
-- [ ] **TASK-088:** Implement Completion section
-- [ ] **TASK-089:** Integrate FileUpload for all photo sections
+- [x] **TASK-082:** Create WindAuditForm component (components/forms/WindAuditForm.tsx)
+- [x] **TASK-083:** Implement Site Check section (collapsible)
+- [x] **TASK-084:** Implement Wind Audit section
+- [x] **TASK-085:** Implement Locker Before section
+- [x] **TASK-086:** Implement Locker Test section
+- [x] **TASK-087:** Implement Ground & Plexo Test section
+- [x] **TASK-088:** Implement Completion section
+- [x] **TASK-089:** Integrate FileUpload for all photo sections
 - [ ] **TASK-090:** Save form data as JSON with embedded photo URLs
 - [ ] **TASK-091:** Test wind audit form end-to-end
 

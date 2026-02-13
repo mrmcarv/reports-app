@@ -25,6 +25,7 @@ import { workOrders } from '@/lib/schema';
 import { eq, and } from 'drizzle-orm';
 import { BatterySwapFormWrapper } from '@/components/work-orders/BatterySwapFormWrapper';
 import { MaintenanceFormWrapper } from '@/components/work-orders/MaintenanceFormWrapper';
+import { WindAuditFormWrapper } from '@/components/work-orders/WindAuditFormWrapper';
 
 interface PageProps {
   params: Promise<{
@@ -315,11 +316,10 @@ export default async function WorkOrderPage({ params }: PageProps) {
             )}
 
             {workOrder.workType === 'wind_audit' && (
-              <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                <p className="text-sm text-yellow-800">
-                  Wind Audit form coming soon...
-                </p>
-              </div>
+              <WindAuditFormWrapper
+                workOrderId={workOrder.workOrderId}
+                supabaseWorkOrderId={supabaseWorkOrder!.id}
+              />
             )}
 
             {workOrder.workType === 'survey' && (
