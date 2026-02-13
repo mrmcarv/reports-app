@@ -25,9 +25,7 @@ import { QRScanner } from '@/components/QRScanner';
 
 // Single battery swap entry
 const batterySwapEntrySchema = z.object({
-  batteryPosition: z.enum(['1', '2', '3'], {
-    required_error: 'Battery position is required',
-  }),
+  batteryPosition: z.enum(['1', '2', '3'], 'Battery position is required'),
   oldBatterySn: z
     .string()
     .min(1, 'Old battery serial number is required')
@@ -123,7 +121,7 @@ export function BatterySwapForm({
    * Add new battery swap entry
    */
   const handleAddSwap = () => {
-    append({ batteryPosition: undefined, oldBatterySn: '', newBatterySn: '' });
+    append({ batteryPosition: '1', oldBatterySn: '', newBatterySn: '' });
   };
 
   /**

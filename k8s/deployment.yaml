@@ -1,0 +1,249 @@
+---
+# Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: reports-app
+
+---
+# ConfigMap for non-sensitive configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: reports-app
+data:
+  NEXT_PUBLIC_APP_URL: "https://reports.bloqit.io"
+  AWS_REGION: "us-east-1"
+  AWS_S3_BUCKET: "zite-technician-photos"
+
+---
+# Secret for sensitive data
+# NOTE: Base64 encode your secrets before applying
+# Example: echo -n "your-secret" | base64
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secrets
+  namespace: reports-app
+type: Opaque
+data:
+  database-url: cG9zdGdyZXNxbDovL3VzZXI6cGFzc0Bob3N0OjU0MzIvZGI=  # REPLACE
+  airtable-api-key: a2V5Li4u  # REPLACE
+  airtable-base-id-debloq: YXBwLi4u  # REPLACE
+  n8n-webhook-url: aHR0cHM6Ly9uOG4uLi4=  # REPLACE
+  n8n-webhook-secret: c2VjcmV0  # REPLACE
+  jwt-secret: eW91ci1zdXBlci1zZWNyZXQta2V5  # REPLACE
+  resend-api-key: cmVfLi4u  # REPLACE
+  aws-access-key-id: QUtJQS4uLg==  # REPLACE
+  aws-secret-access-key: c2VjcmV0Li4u  # REPLACE
+
+---
+# Secret for pulling from GitHub Container Registry
+# Create with: kubectl create secret docker-registry ghcr-secret \
+#   --docker-server=ghcr.io \
+#   --docker-username=YOUR_USERNAME \
+#   --docker-password=YOUR_GITHUB_TOKEN \
+#   --docker-email=YOUR_EMAIL \
+#   --namespace=reports-app
+
+---
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reports-app
+  namespace: reports-app
+  labels:
+    app: reports-app
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: reports-app
+  template:
+    metadata:
+      labels:
+        app: reports-app
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: app
+          image: ghcr.io/YOUR_USERNAME/reports-app:latest  # REPLACE
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: http
+              protocol: TCP
+
+          env:
+            # From ConfigMap
+            - name: NEXT_PUBLIC_APP_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: NEXT_PUBLIC_APP_URL
+            - name: AWS_REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: AWS_REGION
+            - name: AWS_S3_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: AWS_S3_BUCKET
+
+            # From Secret
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: database-url
+            - name: AIRTABLE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: airtable-api-key
+            - name: AIRTABLE_BASE_ID_DEBLOQ
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: airtable-base-id-debloq
+            - name: N8N_WEBHOOK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: n8n-webhook-url
+            - name: N8N_WEBHOOK_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: n8n-webhook-secret
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: jwt-secret
+            - name: RESEND_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: resend-api-key
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: aws-access-key-id
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: aws-secret-access-key
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: reports-app
+  namespace: reports-app
+  labels:
+    app: reports-app
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+      name: http
+  selector:
+    app: reports-app
+
+---
+# Ingress (example - adjust for your ingress controller)
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: reports-app
+  namespace: reports-app
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"  # If using cert-manager
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx  # Adjust based on your ingress controller
+  tls:
+    - hosts:
+        - reports.bloqit.io
+      secretName: reports-app-tls
+  rules:
+    - host: reports.bloqit.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: reports-app
+                port:
+                  number: 80
+
+---
+# HorizontalPodAutoscaler (optional)
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: reports-app
+  namespace: reports-app
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: reports-app
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80

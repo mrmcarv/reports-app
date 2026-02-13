@@ -1,5 +1,5 @@
 /**
- * Airtable API Client (Read-Only)
+ * Airtable API Client (Read-Only, Lazy Initialization)
  *
  * This client reads work orders from the DeBloq Airtable base.
  * Used for:
@@ -12,9 +12,32 @@
 
 import Airtable from 'airtable';
 
-// Initialize Airtable
-const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY });
-const debloqBase = airtable.base(process.env.AIRTABLE_BASE_ID_DEBLOQ!);
+let debloqBaseInstance: ReturnType<Airtable['base']> | null = null;
+
+/**
+ * Get Airtable base instance (lazy initialization)
+ */
+const getDebloqBase = () => {
+  if (debloqBaseInstance) {
+    return debloqBaseInstance;
+  }
+
+  const apiKey = process.env.AIRTABLE_API_KEY;
+  const baseId = process.env.AIRTABLE_BASE_ID_DEBLOQ;
+
+  if (!apiKey) {
+    throw new Error('AIRTABLE_API_KEY is not set in environment variables');
+  }
+
+  if (!baseId) {
+    throw new Error('AIRTABLE_BASE_ID_DEBLOQ is not set in environment variables');
+  }
+
+  const airtable = new Airtable({ apiKey });
+  debloqBaseInstance = airtable.base(baseId);
+
+  return debloqBaseInstance;
+};
 
 /**
  * Work Order from Airtable (DeBloq base)
@@ -51,7 +74,7 @@ export async function fetchWorkOrdersForTechnician(
   technicianEmail: string
 ): Promise<AirtableWorkOrder[]> {
   try {
-    const records = await debloqBase('tblRJg3g7olM5agaY')
+    const records = await getDebloqBase()('tblRJg3g7olM5agaY')
       .select({
         view: 'Grid view',
         filterByFormula: `AND(
@@ -120,7 +143,7 @@ export async function fetchWorkOrderById(
   workOrderId: string
 ): Promise<AirtableWorkOrder | null> {
   try {
-    const records = await debloqBase('tblRJg3g7olM5agaY')
+    const records = await getDebloqBase()('tblRJg3g7olM5agaY')
       .select({
         view: 'Grid view',
         filterByFormula: `{WO_ID} = "${workOrderId}"`,

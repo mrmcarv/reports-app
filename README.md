@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Reports App - Emergency Reporting System for Technicians
 
-## Getting Started
+Field reporting system for Zite technicians to complete work orders, track battery swaps, maintenance, and wind audits.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Next.js 15 (App Router, TypeScript)
+- **Database:** PostgreSQL (self-hosted)
+- **ORM:** Drizzle ORM
+- **Auth:** Magic Link (JWT-based, stateless)
+- **Email:** Resend
+- **Storage:** AWS S3
+- **Workflow:** n8n (Airtable sync)
+- **Deployment:** Docker + Kubernetes + GHCR
+
+## Quick Start
+
+### Local Development
+
+1. **Start PostgreSQL:**
+   ```bash
+   docker-compose -f docker-compose.dev.yml up -d
+   ```
+
+2. **Set up environment:**
+   ```bash
+   cp .env.example .env.local
+   # Edit .env.local with your credentials
+   ```
+
+3. **Run migrations:**
+   ```bash
+   npm run db:push
+   ```
+
+4. **Start dev server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open [http://localhost:3000](http://localhost:3000)**
+
+### Docker (Production-like)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Build and run full stack
+docker-compose up --build
+
+# App: http://localhost:3000
+# PostgreSQL: localhost:5432
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Required environment variables (see `.env.example` for full list):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Database
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/reports_app_dev
 
-## Learn More
+# Airtable
+AIRTABLE_API_KEY=key...
+AIRTABLE_BASE_ID_DEBLOQ=app...
 
-To learn more about Next.js, take a look at the following resources:
+# Auth
+JWT_SECRET=your-super-secret-key-min-32-chars
+RESEND_API_KEY=re_...
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# n8n
+N8N_WEBHOOK_URL=https://...
+N8N_WEBHOOK_SECRET=...
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# App
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run db:generate  # Generate Drizzle migrations
+npm run db:push      # Push schema changes to DB
+npm run db:studio    # Open Drizzle Studio
+
+npm run test:airtable # Test Airtable connection
+npm run test:n8n      # Test n8n webhook
+```
+
+## Documentation
+
+- [Docker & GHCR Setup](docs/DOCKER.md)
+- [Architecture Overview](docs/planning/spec.md)
+- [Development Guide](CLAUDE.md)
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── api/               # API routes
+│   ├── auth/              # Auth pages (magic link)
+│   ├── dashboard/         # Dashboard page
+│   └── work-order/        # Work order detail pages
+├── components/            # React components
+│   ├── forms/            # Form components
+│   ├── work-orders/      # Work order components
+│   └── ui/               # shadcn/ui components
+├── lib/                   # Utilities
+│   ├── db.ts             # Database client
+│   ├── schema.ts         # Drizzle schema
+│   ├── airtable.ts       # Airtable client
+│   └── auth.ts           # Auth utilities
+drizzle/                   # Database migrations
+docs/                      # Documentation
+```
+
+## Deployment
+
+See [docs/DOCKER.md](docs/DOCKER.md) for detailed deployment instructions.
+
+**Quick deploy:**
+
+1. Push to `main` → GitHub Actions builds image
+2. Image pushed to `ghcr.io/YOUR_USERNAME/reports-app`
+3. Pull and deploy to Kubernetes
+
+## Contributing
+
+See [CLAUDE.md](CLAUDE.md) for development patterns and guidelines.

@@ -55,7 +55,7 @@ const maintenanceSchema = z.object({
 
   // Initial Assessment
   beforePhotos: z.array(z.string()).min(1, 'At least one before photo is required'),
-  issueConfirmed: z.enum(['yes', 'no'], { required_error: 'Please confirm the issue' }),
+  issueConfirmed: z.enum(['yes', 'no'], 'Please confirm the issue'),
   actualIssue: z.string().optional(),
   rootCause: z.string().min(10, 'Root cause must be at least 10 characters'),
 
@@ -66,13 +66,9 @@ const maintenanceSchema = z.object({
 
   // Completion
   afterPhotos: z.array(z.string()).min(1, 'At least one after photo is required'),
-  issueResolved: z.enum(['yes', 'partially', 'no'], {
-    required_error: 'Please indicate resolution status',
-  }),
+  issueResolved: z.enum(['yes', 'partially', 'no'], 'Please indicate resolution status'),
   testingPerformed: z.string().min(10, 'Testing description must be at least 10 characters'),
-  additionalIssuesFound: z.enum(['yes', 'no'], {
-    required_error: 'Please indicate if additional issues were found',
-  }),
+  additionalIssuesFound: z.enum(['yes', 'no'], 'Please indicate if additional issues were found'),
   additionalIssuesDescription: z.string().optional(),
   completionNotes: z.string().optional(),
 });

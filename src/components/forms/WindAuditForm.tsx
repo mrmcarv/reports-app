@@ -24,17 +24,15 @@ import { FileUpload } from '@/components/FileUpload';
 // Validation schema
 const windAuditSchema = z.object({
   // Site Check
-  siteAccessible: z.enum(['yes', 'no'], { required_error: 'Required' }),
+  siteAccessible: z.enum(['yes', 'no'], 'Required'),
   siteCondition: z.string().min(1, 'Site condition is required'),
   siteIssues: z.string().optional(),
   sitePhotos: z.array(z.string()).optional(),
 
   // Wind Audit
-  windConditions: z.enum(['calm', 'light', 'moderate', 'strong'], {
-    required_error: 'Wind conditions required',
-  }),
+  windConditions: z.enum(['calm', 'light', 'moderate', 'strong'], 'Wind conditions required'),
   windNotes: z.string().optional(),
-  environmentalIssues: z.enum(['yes', 'no'], { required_error: 'Required' }),
+  environmentalIssues: z.enum(['yes', 'no'], 'Required'),
   environmentalIssuesDescription: z.string().optional(),
   windAuditPhotos: z.array(z.string()).min(1, 'At least one photo required'),
   windAuditPhotos2: z.array(z.string()).optional(),
@@ -45,17 +43,15 @@ const windAuditSchema = z.object({
   batteryVoltage: z.string().optional(),
   batteryPercentage: z.string().optional(),
   lockerBeforePhotos2: z.array(z.string()).optional(),
-  screenWorking: z.enum(['yes', 'no'], { required_error: 'Required' }),
+  screenWorking: z.enum(['yes', 'no'], 'Required'),
   lockerBeforePhotos3: z.array(z.string()).optional(),
 
   // Locker Test
   lockerTestPhotos: z.array(z.string()).min(1, 'At least one photo required'),
-  compartmentsWorking: z.enum(['all', 'some', 'none'], {
-    required_error: 'Required',
-  }),
+  compartmentsWorking: z.enum(['all', 'some', 'none'], 'Required'),
   compartmentIssues: z.string().optional(),
   lockerTestPhotos2: z.array(z.string()).optional(),
-  printerWorking: z.enum(['yes', 'no'], { required_error: 'Required' }),
+  printerWorking: z.enum(['yes', 'no'], 'Required'),
   lockerTestPhotos3: z.array(z.string()).optional(),
   lockerTestPhotos4: z.array(z.string()).optional(),
   lockerTestPhotos5: z.array(z.string()).optional(),
@@ -63,12 +59,10 @@ const windAuditSchema = z.object({
   lockerTestPhotos7: z.array(z.string()).optional(),
 
   // Ground & Plexo Test
-  groundingTest: z.enum(['passed', 'failed'], { required_error: 'Required' }),
+  groundingTest: z.enum(['passed', 'failed'], 'Required'),
   groundingTestPhotos: z.array(z.string()).optional(),
   groundingTestPhotos2: z.array(z.string()).optional(),
-  plexoCondition: z.enum(['good', 'fair', 'poor'], {
-    required_error: 'Required',
-  }),
+  plexoCondition: z.enum(['good', 'fair', 'poor'], 'Required'),
 
   // Completion
   completionNotes: z.string().optional(),
