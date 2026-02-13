@@ -36,28 +36,31 @@ export function QRScanner({ onScan, onError, onClose }: QRScannerProps) {
         setIsScanning(true);
         setError(null);
 
-        // Initialize QR code reader
-        const reader = new BrowserQRCodeReader();
-        readerRef.current = reader;
+        // Get available video devices using browser API
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const videoDevices = devices.filter(
+          (device) => device.kind === 'videoinput'
+        );
 
-        // Get available video devices
-        const videoInputDevices = await reader.listVideoInputDevices();
-
-        if (videoInputDevices.length === 0) {
+        if (videoDevices.length === 0) {
           throw new Error('No camera found');
         }
 
         // Prefer back camera on mobile
-        const backCamera = videoInputDevices.find(
+        const backCamera = videoDevices.find(
           (device) =>
             device.label.toLowerCase().includes('back') ||
             device.label.toLowerCase().includes('rear') ||
             device.label.toLowerCase().includes('environment')
         );
 
-        const deviceId = backCamera?.deviceId || videoInputDevices[0].deviceId;
+        const deviceId = backCamera?.deviceId || videoDevices[0].deviceId;
 
-        // Start scanning
+        // Initialize QR code reader
+        const reader = new BrowserQRCodeReader();
+        readerRef.current = reader;
+
+        // Start scanning with specific device
         if (videoRef.current && mounted) {
           await reader.decodeFromVideoDevice(
             deviceId,
