@@ -5,14 +5,35 @@
  * Groups work orders by date (Today, Upcoming, Overdue).
  *
  * Data flow:
- * 1. Fetch work orders from Airtable (via API route)
- * 2. Filter by logged-in technician's email
- * 3. Sort by planned date
- * 4. Display in WorkOrderList component
+ * 1. Check authentication
+ * 2. Fetch work orders from API route (mock or Airtable)
+ * 3. Display in WorkOrderList component with grouping
  */
 
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
+import { WorkOrderList } from '@/components/work-orders/WorkOrderList';
+
+async function getWorkOrders() {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/work-orders`,
+      {
+        cache: 'no-store', // Always fetch fresh data
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch work orders');
+    }
+
+    const data = await response.json();
+    return data.workOrders;
+  } catch (error) {
+    console.error('Error fetching work orders:', error);
+    return { today: [], upcoming: [], overdue: [] };
+  }
+}
 
 export default async function DashboardPage() {
   // Check authentication
@@ -24,6 +45,9 @@ export default async function DashboardPage() {
   if (!user) {
     redirect('/login');
   }
+
+  // Fetch work orders
+  const workOrders = await getWorkOrders();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -60,32 +84,8 @@ export default async function DashboardPage() {
           </p>
         </div>
 
-        {/* Work order list placeholder */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="text-center py-12">
-            <div className="text-gray-400 mb-4">
-              <svg
-                className="mx-auto h-12 w-12"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-1">
-              Work Orders Loading...
-            </h3>
-            <p className="text-sm text-gray-500">
-              Fetching your assigned work orders from Airtable
-            </p>
-          </div>
-        </div>
+        {/* Work order list */}
+        <WorkOrderList workOrders={workOrders} />
       </main>
     </div>
   );
