@@ -24,6 +24,7 @@ import { db } from '@/lib/db';
 import { workOrders } from '@/lib/schema';
 import { eq, and } from 'drizzle-orm';
 import { BatterySwapFormWrapper } from '@/components/work-orders/BatterySwapFormWrapper';
+import { MaintenanceFormWrapper } from '@/components/work-orders/MaintenanceFormWrapper';
 
 interface PageProps {
   params: Promise<{
@@ -281,15 +282,44 @@ export default async function WorkOrderPage({ params }: PageProps) {
             </p>
           </div>
         ) : (
-          /* In progress - show battery swap form */
+          /* In progress - show appropriate form based on work type */
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Complete Battery Swap
+              {workOrder.workType === 'battery_swap' && 'Complete Battery Swap'}
+              {workOrder.workType === 'maintenance' && 'Complete Maintenance'}
+              {workOrder.workType === 'wind_audit' && 'Complete Wind Audit'}
+              {workOrder.workType === 'survey' && 'Complete Survey'}
             </h3>
-            <BatterySwapFormWrapper
-              workOrderId={workOrder.workOrderId}
-              supabaseWorkOrderId={supabaseWorkOrder!.id}
-            />
+
+            {workOrder.workType === 'battery_swap' && (
+              <BatterySwapFormWrapper
+                workOrderId={workOrder.workOrderId}
+                supabaseWorkOrderId={supabaseWorkOrder!.id}
+              />
+            )}
+
+            {workOrder.workType === 'maintenance' && (
+              <MaintenanceFormWrapper
+                workOrderId={workOrder.workOrderId}
+                supabaseWorkOrderId={supabaseWorkOrder!.id}
+              />
+            )}
+
+            {workOrder.workType === 'wind_audit' && (
+              <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p className="text-sm text-yellow-800">
+                  Wind Audit form coming soon...
+                </p>
+              </div>
+            )}
+
+            {workOrder.workType === 'survey' && (
+              <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p className="text-sm text-yellow-800">
+                  Survey form coming soon...
+                </p>
+              </div>
+            )}
           </div>
         )}
       </main>
