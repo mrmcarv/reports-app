@@ -218,7 +218,7 @@
 - [x] **TASK-111:** Create parts API route (POST /api/work-orders/[id]/parts)
 - [x] **TASK-112:** Implement save to Supabase with formSubmissionId (use localId from payload)
 - [x] **TASK-113:** Add "Skip - No Parts" button
-- [ ] **TASK-114:** Test parts tracking with multiple forms
+- [x] **TASK-114:** Test parts tracking with multiple forms
 
 ### Work Order Completion
 
