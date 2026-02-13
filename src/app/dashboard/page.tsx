@@ -14,6 +14,7 @@ import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { WorkOrderList } from '@/components/work-orders/WorkOrderList';
 import { RefreshButton } from '@/components/RefreshButton';
+import { LogoutButton } from '@/components/auth/LogoutButton';
 import {
   fetchWorkOrdersForTechnician,
   groupWorkOrdersByDate,
@@ -67,14 +68,7 @@ export default async function DashboardPage() {
               </h1>
               <p className="text-sm text-gray-600 mt-1">{user.email}</p>
             </div>
-            <form action="/auth/signout" method="post">
-              <button
-                type="submit"
-                className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition"
-              >
-                Sign out
-              </button>
-            </form>
+            <LogoutButton />
           </div>
         </div>
       </header>
