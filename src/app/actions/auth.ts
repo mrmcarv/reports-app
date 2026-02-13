@@ -13,7 +13,7 @@ import { redirect } from 'next/navigation';
 
 /**
  * Sign out the current user
- * Clears the session and redirects to login
+ * Clears the session (redirect handled by client)
  */
 export async function signOut() {
   const supabase = await createClient();
@@ -26,7 +26,7 @@ export async function signOut() {
   }
 
   revalidatePath('/', 'layout');
-  redirect('/login');
+  return { success: true };
 }
 
 /**

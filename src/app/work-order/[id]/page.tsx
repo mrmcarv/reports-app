@@ -22,9 +22,9 @@ import { USE_MOCK_DATA, MOCK_WORK_ORDERS } from '@/lib/mockData';
 import { StartWorkButton } from '@/components/work-orders/StartWorkButton';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 /**
@@ -108,6 +108,9 @@ function formatDate(dateString?: string): string {
 }
 
 export default async function WorkOrderPage({ params }: PageProps) {
+  // Await params (Next.js 15+ requirement)
+  const { id } = await params;
+
   // Check authentication
   const supabase = await createClient();
   const {
@@ -119,7 +122,7 @@ export default async function WorkOrderPage({ params }: PageProps) {
   }
 
   // Fetch work order
-  const workOrder = await getWorkOrder(params.id);
+  const workOrder = await getWorkOrder(id);
 
   if (!workOrder) {
     notFound();
