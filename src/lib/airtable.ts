@@ -88,14 +88,15 @@ export async function fetchWorkOrdersForTechnician(
         workOrderId: record.get('WO_ID') as string,
         workType,
         client: record.get('Client') as string | undefined,
-      pointCode: record.get('Bloqit ID') as string | undefined,
-      lockerVersion: record.get('Locker') as string | undefined,
-      initialIssue: record.get('Description Complete') as string | undefined,
-      plannedDate: record.get('Planned Date') as string | undefined,
-      step: record.get('Step') as string | undefined,
-      status: record.get('Status') as string | undefined,
-      technicianEmail: record.get('Technician_drona') as string | undefined,
-    }));
+        pointCode: record.get('Bloqit ID') as string | undefined,
+        lockerVersion: record.get('Locker') as string | undefined,
+        initialIssue: record.get('Description Complete') as string | undefined,
+        plannedDate: record.get('Planned Date') as string | undefined,
+        step: record.get('Step') as string | undefined,
+        status: record.get('Status') as string | undefined,
+        technicianEmail: record.get('Technician_drona') as string | undefined,
+      };
+    });
   } catch (error) {
     console.error('Error fetching work orders from Airtable:', error);
     throw new Error('Failed to fetch work orders from Airtable');
