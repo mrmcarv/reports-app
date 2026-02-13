@@ -234,7 +234,6 @@ export function FileUpload({
         onChange={handleFileSelect}
         disabled={disabled || isUploading}
         className="hidden"
-        capture="environment" // Prefer rear camera on mobile
       />
 
       {/* Upload button */}
