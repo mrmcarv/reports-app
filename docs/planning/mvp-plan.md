@@ -158,7 +158,7 @@
 - [x] **TASK-069:** Implement save to Supabase (multiple rows, one per battery)
 - [x] **TASK-070:** Validate no duplicate battery positions
 - [x] **TASK-071:** Auto-complete work order after battery swap submission (standalone only)
-- [ ] **TASK-072:** Test battery swap form end-to-end
+- [x] **TASK-072:** Test battery swap form end-to-end
 
 ### Maintenance Form
 
