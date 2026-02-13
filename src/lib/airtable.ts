@@ -55,7 +55,12 @@ export async function fetchWorkOrdersForTechnician(
       .select({
         view: 'Grid view',
         filterByFormula: `AND(
-          {Step} = "3-Scheduled ",
+          OR(
+            {Step} = "3-Scheduled ",
+            {Step} = "4-In Progress",
+            {Step} = "5-Awaiting Validation",
+            {Step} = "6-Done"
+          ),
           {Status} = "On Track",
           {Technician_drona} = "${technicianEmail}"
         )`,

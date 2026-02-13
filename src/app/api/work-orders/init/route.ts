@@ -21,6 +21,7 @@ import { USE_MOCK_DATA, MOCK_WORK_ORDERS } from '@/lib/mockData';
 import { db } from '@/lib/db';
 import { workOrders } from '@/lib/schema';
 import { eq, and } from 'drizzle-orm';
+import Airtable from 'airtable';
 
 interface InitRequest {
   workOrderId: string;
@@ -118,7 +119,24 @@ export async function POST(request: NextRequest) {
 
     console.log('✅ Work order initialized in Supabase:', newWorkOrder.id);
 
-    // 7. Return success
+    // 7. Update Airtable work order step to "4-in progress"
+    if (!USE_MOCK_DATA) {
+      try {
+        const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY });
+        const base = airtable.base(process.env.AIRTABLE_BASE_ID_DEBLOQ!);
+
+        await base('tblRJg3g7olM5agaY').update(airtableWorkOrder.id, {
+          'Step': '4-in progress',
+        });
+
+        console.log('✅ Updated Airtable work order step to "4-in progress"');
+      } catch (airtableError) {
+        // Log error but don't fail the request - work order is still initialized in Supabase
+        console.error('⚠️ Failed to update Airtable step:', airtableError);
+      }
+    }
+
+    // 8. Return success
     return NextResponse.json({
       workOrder: newWorkOrder,
       message: 'Work order initialized successfully',
