@@ -8,6 +8,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { MaintenanceFormWrapper } from './MaintenanceFormWrapper';
 import { WindAuditFormWrapper } from './WindAuditFormWrapper';
 
@@ -33,6 +34,7 @@ export function WorkOrderFormsManager({
   completedForms,
   availableFormTypes,
 }: WorkOrderFormsManagerProps) {
+  const router = useRouter();
   const [activeForm, setActiveForm] = useState<FormType>(null);
 
   // If no forms completed yet, show first available form
@@ -200,8 +202,8 @@ export function WorkOrderFormsManager({
           </p>
           <button
             onClick={() => {
-              // TODO: Navigate to parts tracking or complete directly
-              alert('Complete work order - TODO: implement completion flow');
+              // Navigate to parts tracking page
+              router.push(`/work-order/${workOrderId}/parts`);
             }}
             className="w-full sm:w-auto px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md transition"
           >
